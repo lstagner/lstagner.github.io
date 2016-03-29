@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Some Fortran program which I wrote.">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>write_dcx &ndash; Fortran Program</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">Fortran Program </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+                
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+				
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>write_dcx
+    <small>Subroutine</small>
+    
+    </h1>
+	 
+<div class="row">
+<div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+    <li><i class="fa fa-code"></i><a href="../src/fidasim.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/fidasim.f90.html'>fidasim.f90</a></li>
+  
+     <li><a href='../module/simulation.html'>simulation</a></li>
+  
+     <li class="active">write_dcx</li>
+  </ol>
+</div>
+</div>
+</div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-3">
+    
+<div id="sidebar">
+  
+  
+  
+  <div class="panel panel-primary">
+    <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars">Variables</a></h3></div>
+    <div id="vars" class="panel-collapse collapse">
+      <div class="list-group">
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-fid%7E12">fid</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-dims%7E8">dims</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-d%7E5">d</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-error%7E14">error</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-filename%7E2">filename</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-i%7E17">i</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-lambda_arr">lambda_arr</a>
+        
+        <a class="list-group-item" href="../proc/write_dcx.html#variable-dcx_spec">dcx_spec</a>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <hr>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprocs">All Procedures</a></h3></div>
+    <div id="allprocs" class="panel-collapse collapse">
+        <div class="list-group">
+          
+          <a class="list-group-item" href="../proc/aq_cx.html">Aq_cx</a>
+          
+          <a class="list-group-item" href="../proc/aq_cx_n.html">Aq_cx_n</a>
+          
+          <a class="list-group-item" href="../proc/aq_cx_n_adas.html">Aq_cx_n_adas</a>
+          
+          <a class="list-group-item" href="../proc/aq_cx_n_janev.html">Aq_cx_n_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit.html">Aq_excit</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_2_janev.html">Aq_excit_1_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_3_janev.html">Aq_excit_1_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_4_janev.html">Aq_excit_1_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_5_janev.html">Aq_excit_1_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_janev.html">Aq_excit_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_10_janev.html">Aq_excit_2_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_3_janev.html">Aq_excit_2_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_4_janev.html">Aq_excit_2_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_5_janev.html">Aq_excit_2_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_6_janev.html">Aq_excit_2_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_7_janev.html">Aq_excit_2_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_8_janev.html">Aq_excit_2_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_9_janev.html">Aq_excit_2_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_janev.html">Aq_excit_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_10_janev.html">Aq_excit_3_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_4_janev.html">Aq_excit_3_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_5_janev.html">Aq_excit_3_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_6_janev.html">Aq_excit_3_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_7_janev.html">Aq_excit_3_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_8_janev.html">Aq_excit_3_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_9_janev.html">Aq_excit_3_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_janev.html">Aq_excit_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_n.html">Aq_excit_n</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_n_janev.html">Aq_excit_n_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_n_m.html">Aq_excit_n_m</a>
+          
+          <a class="list-group-item" href="../proc/aq_ioniz.html">Aq_ioniz</a>
+          
+          <a class="list-group-item" href="../proc/aq_ioniz_n.html">Aq_ioniz_n</a>
+          
+          <a class="list-group-item" href="../proc/aq_ioniz_n_janev.html">Aq_ioniz_n_janev</a>
+          
+          <a class="list-group-item" href="../interface/assignment%28%3D%29.html">assignment(=)</a>
+          
+          <a class="list-group-item" href="../proc/attenuate.html">attenuate</a>
+          
+          <a class="list-group-item" href="../proc/b5_cx_1_adas.html">B5_cx_1_adas</a>
+          
+          <a class="list-group-item" href="../proc/b5_cx_1_janev.html">B5_cx_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/b5_cx_2_adas.html">B5_cx_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/b5_ioniz_1_janev.html">B5_ioniz_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/balance.html">balance</a>
+          
+          <a class="list-group-item" href="../proc/balback.html">balback</a>
+          
+          <a class="list-group-item" href="../proc/bremsstrahlung.html">bremsstrahlung</a>
+          
+          <a class="list-group-item" href="../interface/bt_maxwellian.html">bt_maxwellian</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_n.html">bt_maxwellian_n</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_n_m.html">bt_maxwellian_n_m</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_q_n.html">bt_maxwellian_q_n</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_q_n_m.html">bt_maxwellian_q_n_m</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_1_adas.html">C6_cx_1_adas</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_1_janev.html">C6_cx_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_2_adas.html">C6_cx_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_3_adas.html">C6_cx_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/c6_ioniz_1_janev.html">C6_ioniz_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/calc_perp_vectors.html">calc_perp_vectors</a>
+          
+          <a class="list-group-item" href="../proc/check_compression_availability.html">check_compression_availability</a>
+          
+          <a class="list-group-item" href="../proc/colrad.html">colrad</a>
+          
+          <a class="list-group-item" href="../proc/comabs.html">comabs</a>
+          
+          <a class="list-group-item" href="../proc/comdiv.html">Comdiv</a>
+          
+          <a class="list-group-item" href="../proc/cross_product.html">cross_product</a>
+          
+          <a class="list-group-item" href="../proc/dcx.html">dcx</a>
+          
+          <a class="list-group-item" href="../proc/e_excit.html">e_excit</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_2_janev.html">e_excit_1_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_3_janev.html">e_excit_1_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_4_janev.html">e_excit_1_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_5_janev.html">e_excit_1_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_janev.html">e_excit_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_2_3_janev.html">e_excit_2_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_f.html">e_excit_f</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_n.html">e_excit_n</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_n_m.html">e_excit_n_m</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz.html">e_ioniz</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_1_janev.html">e_ioniz_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_2_janev.html">e_ioniz_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_3_janev.html">e_ioniz_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_n.html">e_ioniz_n</a>
+          
+          <a class="list-group-item" href="../proc/eigen.html">eigen</a>
+          
+          <a class="list-group-item" href="../proc/elmhes.html">elmhes</a>
+          
+          <a class="list-group-item" href="../proc/elmtrans.html">elmtrans</a>
+          
+          <a class="list-group-item" href="../proc/fast_ion_assign.html">fast_ion_assign</a>
+          
+          <a class="list-group-item" href="../proc/ff_add.html">ff_add</a>
+          
+          <a class="list-group-item" href="../proc/ff_assign.html">ff_assign</a>
+          
+          <a class="list-group-item" href="../proc/ff_subtract.html">ff_subtract</a>
+          
+          <a class="list-group-item" href="../proc/fida_f.html">fida_f</a>
+          
+          <a class="list-group-item" href="../proc/fida_mc.html">fida_mc</a>
+          
+          <a class="list-group-item" href="../proc/fida_weights_los.html">fida_weights_los</a>
+          
+          <a class="list-group-item" href="../proc/fida_weights_mc.html">fida_weights_mc</a>
+          
+          <a class="list-group-item" href="../proc/flf_assign.html">flf_assign</a>
+          
+          <a class="list-group-item" href="../proc/fs_divide.html">fs_divide</a>
+          
+          <a class="list-group-item" href="../proc/fs_multiply.html">fs_multiply</a>
+          
+          <a class="list-group-item" href="../proc/get_beam_cx_prob.html">get_beam_cx_prob</a>
+          
+          <a class="list-group-item" href="../proc/get_distribution.html">get_distribution</a>
+          
+          <a class="list-group-item" href="../proc/get_ep_denf.html">get_ep_denf</a>
+          
+          <a class="list-group-item" href="../proc/get_fields.html">get_fields</a>
+          
+          <a class="list-group-item" href="../proc/get_indices.html">get_indices</a>
+          
+          <a class="list-group-item" href="../proc/get_nlaunch.html">get_nlaunch</a>
+          
+          <a class="list-group-item" href="../proc/get_plasma.html">get_plasma</a>
+          
+          <a class="list-group-item" href="../proc/get_position.html">get_position</a>
+          
+          <a class="list-group-item" href="../proc/get_rate_matrix.html">get_rate_matrix</a>
+          
+          <a class="list-group-item" href="../proc/grid_intersect.html">grid_intersect</a>
+          
+          <a class="list-group-item" href="../proc/gyro_correction.html">gyro_correction</a>
+          
+          <a class="list-group-item" href="../interface/h5ltmake_compressed_dataset_double_f.html">h5ltmake_compressed_dataset_double_f</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_1.html">h5ltmake_compressed_dataset_double_f_1</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_2.html">h5ltmake_compressed_dataset_double_f_2</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_3.html">h5ltmake_compressed_dataset_double_f_3</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_4.html">h5ltmake_compressed_dataset_double_f_4</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_5.html">h5ltmake_compressed_dataset_double_f_5</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_6.html">h5ltmake_compressed_dataset_double_f_6</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_7.html">h5ltmake_compressed_dataset_double_f_7</a>
+          
+          <a class="list-group-item" href="../interface/h5ltmake_compressed_dataset_int_f.html">h5ltmake_compressed_dataset_int_f</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_1.html">h5ltmake_compressed_dataset_int_f_1</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_2.html">h5ltmake_compressed_dataset_int_f_2</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_3.html">h5ltmake_compressed_dataset_int_f_3</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_4.html">h5ltmake_compressed_dataset_int_f_4</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_5.html">h5ltmake_compressed_dataset_int_f_5</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_6.html">h5ltmake_compressed_dataset_int_f_6</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_7.html">h5ltmake_compressed_dataset_int_f_7</a>
+          
+          <a class="list-group-item" href="../proc/h5ltread_dataset_double_scalar_f.html">h5ltread_dataset_double_scalar_f</a>
+          
+          <a class="list-group-item" href="../proc/h5ltread_dataset_int_scalar_f.html">h5ltread_dataset_int_scalar_f</a>
+          
+          <a class="list-group-item" href="../proc/halo.html">halo</a>
+          
+          <a class="list-group-item" href="../proc/hit_npa_detector.html">hit_npa_detector</a>
+          
+          <a class="list-group-item" href="../proc/hqr2.html">hqr2</a>
+          
+          <a class="list-group-item" href="../proc/hqrvec.html">hqrvec</a>
+          
+          <a class="list-group-item" href="../proc/in_boundary.html">in_boundary</a>
+          
+          <a class="list-group-item" href="../proc/in_plasma.html">in_plasma</a>
+          
+          <a class="list-group-item" href="../proc/ind2sub.html">ind2sub</a>
+          
+          <a class="list-group-item" href="../interface/interpol.html">interpol</a>
+          
+          <a class="list-group-item" href="../proc/interpol1d_arr.html">interpol1D_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol1d_coeff.html">interpol1D_coeff</a>
+          
+          <a class="list-group-item" href="../proc/interpol1d_coeff_arr.html">interpol1D_coeff_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_2d_arr.html">interpol2D_2D_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_arr.html">interpol2D_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_coeff.html">interpol2D_coeff</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_coeff_arr.html">interpol2D_coeff_arr</a>
+          
+          <a class="list-group-item" href="../interface/interpol_coeff.html">interpol_coeff</a>
+          
+          <a class="list-group-item" href="../proc/lff_assign.html">lff_assign</a>
+          
+          <a class="list-group-item" href="../proc/lflf_add.html">lflf_add</a>
+          
+          <a class="list-group-item" href="../proc/lflf_assign.html">lflf_assign</a>
+          
+          <a class="list-group-item" href="../proc/lflf_subtract.html">lflf_subtract</a>
+          
+          <a class="list-group-item" href="../proc/lfs_divide.html">lfs_divide</a>
+          
+          <a class="list-group-item" href="../proc/lfs_multiply.html">lfs_multiply</a>
+          
+          <a class="list-group-item" href="../proc/line_basis.html">line_basis</a>
+          
+          <a class="list-group-item" href="../proc/lplp_add.html">lplp_add</a>
+          
+          <a class="list-group-item" href="../proc/lplp_assign.html">lplp_assign</a>
+          
+          <a class="list-group-item" href="../proc/lplp_subtract.html">lplp_subtract</a>
+          
+          <a class="list-group-item" href="../proc/lpp_assign.html">lpp_assign</a>
+          
+          <a class="list-group-item" href="../proc/lps_divide.html">lps_divide</a>
+          
+          <a class="list-group-item" href="../proc/lps_multiply.html">lps_multiply</a>
+          
+          <a class="list-group-item" href="../proc/lubksb.html">lubksb</a>
+          
+          <a class="list-group-item" href="../proc/ludcmp.html">ludcmp</a>
+          
+          <a class="list-group-item" href="../proc/m_spread.html">m_spread</a>
+          
+          <a class="list-group-item" href="../proc/make_beam_grid.html">make_beam_grid</a>
+          
+          <a class="list-group-item" href="../proc/matinv.html">matinv</a>
+          
+          <a class="list-group-item" href="../proc/mc_fastion.html">mc_fastion</a>
+          
+          <a class="list-group-item" href="../proc/mc_halo.html">mc_halo</a>
+          
+          <a class="list-group-item" href="../proc/mc_nbi.html">mc_nbi</a>
+          
+          <a class="list-group-item" href="../proc/ndmc.html">ndmc</a>
+          
+          <a class="list-group-item" href="../proc/neut_rates.html">neut_rates</a>
+          
+          <a class="list-group-item" href="../proc/normp.html">normp</a>
+          
+          <a class="list-group-item" href="../proc/npa_f.html">npa_f</a>
+          
+          <a class="list-group-item" href="../proc/npa_mc.html">npa_mc</a>
+          
+          <a class="list-group-item" href="../proc/npa_part_assign.html">npa_part_assign</a>
+          
+          <a class="list-group-item" href="../proc/npa_weights.html">npa_weights</a>
+          
+          <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28%2B%29.html">operator(+)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28-%29.html">operator(-)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28SLASH%29.html">operator(/)</a>
+          
+          <a class="list-group-item" href="../proc/outerprod.html">outerprod</a>
+          
+          <a class="list-group-item" href="../proc/p_cx.html">p_cx</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1.html">p_cx_1</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_1_adas.html">p_cx_1_1_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_2_adas.html">p_cx_1_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_3_adas.html">p_cx_1_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_4_adas.html">p_cx_1_4_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_janev.html">p_cx_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2.html">p_cx_2</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2_2_adas.html">p_cx_2_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2_3_adas.html">p_cx_2_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2_janev.html">p_cx_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3.html">p_cx_3</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_2_adas.html">p_cx_3_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_3_adas.html">p_cx_3_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_4_adas.html">p_cx_3_4_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_5_adas.html">p_cx_3_5_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_6inf_adas.html">p_cx_3_6inf_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_janev.html">p_cx_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_4_janev.html">p_cx_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_janev.html">p_cx_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_n.html">p_cx_n</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_n_m.html">p_cx_n_m</a>
+          
+          <a class="list-group-item" href="../proc/p_excit.html">p_excit</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_2_janev.html">p_excit_1_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_3_janev.html">p_excit_1_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_4_janev.html">p_excit_1_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_5_janev.html">p_excit_1_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_6_janev.html">p_excit_1_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_janev.html">p_excit_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_10_janev.html">p_excit_2_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_3_janev.html">p_excit_2_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_4_janev.html">p_excit_2_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_5_janev.html">p_excit_2_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_6_janev.html">p_excit_2_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_7_janev.html">p_excit_2_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_8_janev.html">p_excit_2_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_9_janev.html">p_excit_2_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_janev.html">p_excit_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_10_janev.html">p_excit_3_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_4_janev.html">p_excit_3_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_5_janev.html">p_excit_3_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_6_janev.html">p_excit_3_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_7_janev.html">p_excit_3_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_8_janev.html">p_excit_3_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_9_janev.html">p_excit_3_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_janev.html">p_excit_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_n.html">p_excit_n</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_n_m.html">p_excit_n_m</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz.html">p_ioniz</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_1_omullane.html">p_ioniz_1_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_2_omullane.html">p_ioniz_2_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_3_omullane.html">p_ioniz_3_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_4_omullane.html">p_ioniz_4_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_5_omullane.html">p_ioniz_5_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_n.html">p_ioniz_n</a>
+          
+          <a class="list-group-item" href="../proc/pitch_to_vec.html">pitch_to_vec</a>
+          
+          <a class="list-group-item" href="../proc/plane_basis.html">plane_basis</a>
+          
+          <a class="list-group-item" href="../proc/plane_intercept.html">plane_intercept</a>
+          
+          <a class="list-group-item" href="../proc/plp_assign.html">plp_assign</a>
+          
+          <a class="list-group-item" href="../proc/pp_add.html">pp_add</a>
+          
+          <a class="list-group-item" href="../proc/pp_assign.html">pp_assign</a>
+          
+          <a class="list-group-item" href="../proc/pp_subtract.html">pp_subtract</a>
+          
+          <a class="list-group-item" href="../proc/print_banner.html">print_banner</a>
+          
+          <a class="list-group-item" href="../proc/ps_divide.html">ps_divide</a>
+          
+          <a class="list-group-item" href="../proc/ps_multiply.html">ps_multiply</a>
+          
+          <a class="list-group-item" href="../interface/randind.html">randind</a>
+          
+          <a class="list-group-item" href="../proc/randind_n.html">randind_n</a>
+          
+          <a class="list-group-item" href="../proc/randind_w_1.html">randind_w_1</a>
+          
+          <a class="list-group-item" href="../proc/randind_w_2.html">randind_w_2</a>
+          
+          <a class="list-group-item" href="../proc/randn.html">randn</a>
+          
+          <a class="list-group-item" href="../proc/randu.html">randu</a>
+          
+          <a class="list-group-item" href="../proc/read_beam.html">read_beam</a>
+          
+          <a class="list-group-item" href="../proc/read_chords.html">read_chords</a>
+          
+          <a class="list-group-item" href="../proc/read_cross.html">read_cross</a>
+          
+          <a class="list-group-item" href="../proc/read_distribution.html">read_distribution</a>
+          
+          <a class="list-group-item" href="../proc/read_equilibrium.html">read_equilibrium</a>
+          
+          <a class="list-group-item" href="../proc/read_f.html">read_f</a>
+          
+          <a class="list-group-item" href="../proc/read_inputs.html">read_inputs</a>
+          
+          <a class="list-group-item" href="../proc/read_mc.html">read_mc</a>
+          
+          <a class="list-group-item" href="../proc/read_neutrals.html">read_neutrals</a>
+          
+          <a class="list-group-item" href="../proc/read_npa.html">read_npa</a>
+          
+          <a class="list-group-item" href="../proc/read_rates.html">read_rates</a>
+          
+          <a class="list-group-item" href="../proc/read_tables.html">read_tables</a>
+          
+          <a class="list-group-item" href="../proc/rng_init.html">rng_init</a>
+          
+          <a class="list-group-item" href="../proc/rng_normal.html">rng_normal</a>
+          
+          <a class="list-group-item" href="../proc/rng_uniform.html">rng_uniform</a>
+          
+          <a class="list-group-item" href="../proc/rswap.html">RSWAP</a>
+          
+          <a class="list-group-item" href="../proc/sf_multiply.html">sf_multiply</a>
+          
+          <a class="list-group-item" href="../proc/simpsons_rule.html">simpsons_rule</a>
+          
+          <a class="list-group-item" href="../proc/slf_multiply.html">slf_multiply</a>
+          
+          <a class="list-group-item" href="../proc/slp_multiply.html">slp_multiply</a>
+          
+          <a class="list-group-item" href="../proc/sp_multiply.html">sp_multiply</a>
+          
+          <a class="list-group-item" href="../proc/spectrum.html">spectrum</a>
+          
+          <a class="list-group-item" href="../proc/store_bes_photons.html">store_bes_photons</a>
+          
+          <a class="list-group-item" href="../proc/store_births.html">store_births</a>
+          
+          <a class="list-group-item" href="../proc/store_fida_photons.html">store_fida_photons</a>
+          
+          <a class="list-group-item" href="../proc/store_fw_photons.html">store_fw_photons</a>
+          
+          <a class="list-group-item" href="../proc/store_fw_photons_at_chan.html">store_fw_photons_at_chan</a>
+          
+          <a class="list-group-item" href="../proc/store_neutrals.html">store_neutrals</a>
+          
+          <a class="list-group-item" href="../proc/store_npa.html">store_npa</a>
+          
+          <a class="list-group-item" href="../proc/swap.html">swap</a>
+          
+          <a class="list-group-item" href="../proc/tb_zyx.html">tb_zyx</a>
+          
+          <a class="list-group-item" href="../proc/track.html">track</a>
+          
+          <a class="list-group-item" href="../proc/uvw_to_xyz.html">uvw_to_xyz</a>
+          
+          <a class="list-group-item" href="../proc/write_bb_h_aq.html">write_bb_H_Aq</a>
+          
+          <a class="list-group-item" href="../proc/write_bb_h_e.html">write_bb_H_e</a>
+          
+          <a class="list-group-item" href="../proc/write_bb_h_h.html">write_bb_H_H</a>
+          
+          <a class="list-group-item" href="../proc/write_beam_grid.html">write_beam_grid</a>
+          
+          <a class="list-group-item" href="../proc/write_birth_profile.html">write_birth_profile</a>
+          
+          <a class="list-group-item" href="../proc/write_bt_h_aq.html">write_bt_H_Aq</a>
+          
+          <a class="list-group-item" href="../proc/write_bt_h_e.html">write_bt_H_e</a>
+          
+          <a class="list-group-item" href="../proc/write_bt_h_h.html">write_bt_H_H</a>
+          
+          <a class="list-group-item" href="../proc/write_dcx.html">write_dcx</a>
+          
+          <a class="list-group-item" href="../proc/write_einstein.html">write_einstein</a>
+          
+          <a class="list-group-item" href="../proc/write_fida_weights.html">write_fida_weights</a>
+          
+          <a class="list-group-item" href="../proc/write_neutrals.html">write_neutrals</a>
+          
+          <a class="list-group-item" href="../proc/write_npa.html">write_npa</a>
+          
+          <a class="list-group-item" href="../proc/write_npa_weights.html">write_npa_weights</a>
+          
+          <a class="list-group-item" href="../proc/write_spectra.html">write_spectra</a>
+          
+          <a class="list-group-item" href="../proc/xyz_to_uvw.html">xyz_to_uvw</a>
+          
+        </div>
+    </div>
+  </div>
+  
+</div>
+
+    </div>
+    
+    <div class="col-lg-9" id='text'>
+    <h2>
+public subroutine write_dcx()
+    
+    
+    
+</h2>
+    
+  
+
+
+
+    <h3>Arguments</h3>
+    
+      <em>None</em>
+    
+    
+    
+    
+     <h3>Calls</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: proc~~write_dcx~~CallsGraph Pages: 1 -->
+<svg id="procwrite_dcxCallsGraph" width="641pt" height="330pt"
+ viewBox="0.00 0.00 641.00 330.37" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~write_dcx~~CallsGraph" class="graph" transform="scale(0.730901 0.730901) rotate(0) translate(4 448)">
+<title>proc~~write_dcx~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-448 873,-448 873,4 -4,4"/>
+<!-- proc~write_dcx -->
+<g id="proc~~write_dcx~~CallsGraph_node1" class="node"><title>proc~write_dcx</title>
+<polygon fill="none" stroke="black" points="58,-172 3.55271e-15,-172 3.55271e-15,-148 58,-148 58,-172"/>
+<text text-anchor="middle" x="29" y="-157.6" font-family="Helvetica,sans-Serif" font-size="10.50">write_dcx</text>
+</g>
+<!-- h5fcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_node2" class="node"><title>h5fcreate_f</title>
+<polygon fill="#777777" stroke="#777777" points="173.5,-310 106.5,-310 106.5,-286 173.5,-286 173.5,-310"/>
+<text text-anchor="middle" x="140" y="-295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5fcreate_f</text>
+</g>
+<!-- proc~write_dcx&#45;&gt;h5fcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge91" class="edge"><title>proc~write_dcx&#45;&gt;h5fcreate_f</title>
+<path fill="none" stroke="black" d="M34.4469,-172.131C43.0513,-194.258 63.826,-241.682 94,-272 97.0074,-275.022 100.438,-277.814 104.032,-280.358"/>
+<polygon fill="black" stroke="black" points="102.286,-283.396 112.596,-285.836 106.058,-277.499 102.286,-283.396"/>
+</g>
+<!-- h5ltmake_dataset_int_f -->
+<g id="proc~~write_dcx~~CallsGraph_node3" class="node"><title>h5ltmake_dataset_int_f</title>
+<polygon fill="#777777" stroke="#777777" points="388.5,-276 264.5,-276 264.5,-252 388.5,-252 388.5,-276"/>
+<text text-anchor="middle" x="326.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_dataset_int_f</text>
+</g>
+<!-- proc~write_dcx&#45;&gt;h5ltmake_dataset_int_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge92" class="edge"><title>proc~write_dcx&#45;&gt;h5ltmake_dataset_int_f</title>
+<path fill="none" stroke="black" d="M38.3996,-172.132C49.3628,-186.947 70.0052,-211.561 94,-224 143.591,-249.707 206.375,-259.357 254.045,-262.772"/>
+<polygon fill="black" stroke="black" points="254.08,-266.282 264.283,-263.428 254.527,-259.296 254.08,-266.282"/>
+</g>
+<!-- h5fclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_node4" class="node"><title>h5fclose_f</title>
+<polygon fill="#777777" stroke="#777777" points="170.5,-112 109.5,-112 109.5,-88 170.5,-88 170.5,-112"/>
+<text text-anchor="middle" x="140" y="-97.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5fclose_f</text>
+</g>
+<!-- proc~write_dcx&#45;&gt;h5fclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge93" class="edge"><title>proc~write_dcx&#45;&gt;h5fclose_f</title>
+<path fill="none" stroke="black" d="M52.0578,-147.858C68.1617,-138.994 90.2073,-126.858 108.069,-117.026"/>
+<polygon fill="black" stroke="black" points="109.902,-120.012 116.975,-112.124 106.527,-113.88 109.902,-120.012"/>
+</g>
+<!-- h5open_f -->
+<g id="proc~~write_dcx~~CallsGraph_node5" class="node"><title>h5open_f</title>
+<polygon fill="#777777" stroke="#777777" points="169,-70 111,-70 111,-46 169,-46 169,-70"/>
+<text text-anchor="middle" x="140" y="-55.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5open_f</text>
+</g>
+<!-- proc~write_dcx&#45;&gt;h5open_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge94" class="edge"><title>proc~write_dcx&#45;&gt;h5open_f</title>
+<path fill="none" stroke="black" d="M37.0589,-147.827C47.5756,-130.576 68.8416,-98.9059 94,-79 96.4234,-77.0826 99.0503,-75.2904 101.776,-73.626"/>
+<polygon fill="black" stroke="black" points="103.6,-76.6181 110.693,-68.7479 100.24,-70.477 103.6,-76.6181"/>
+</g>
+<!-- h5close_f -->
+<g id="proc~~write_dcx~~CallsGraph_node6" class="node"><title>h5close_f</title>
+<polygon fill="#777777" stroke="#777777" points="169,-28 111,-28 111,-4 169,-4 169,-28"/>
+<text text-anchor="middle" x="140" y="-13.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5close_f</text>
+</g>
+<!-- proc~write_dcx&#45;&gt;h5close_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge95" class="edge"><title>proc~write_dcx&#45;&gt;h5close_f</title>
+<path fill="none" stroke="black" d="M33.3953,-147.908C40.7107,-123.84 60.0999,-69.468 94,-37 96.366,-34.734 99.0211,-32.6779 101.827,-30.8195"/>
+<polygon fill="black" stroke="black" points="103.618,-33.8273 110.562,-25.8247 100.143,-27.7507 103.618,-33.8273"/>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_node7" class="node"><title>interface~h5ltmake_compressed_dataset_double_f</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node7"><a xlink:href="../interface/h5ltmake_compressed_dataset_double_f.html" xlink:title="h5ltmake_compressed_dataset_double_f">
+<polygon fill="#a7506f" stroke="#a7506f" points="431,-234 222,-234 222,-210 431,-210 431,-234"/>
+<text text-anchor="middle" x="326.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f</text>
+</a>
+</g>
+</g>
+<!-- proc~write_dcx&#45;&gt;interface~h5ltmake_compressed_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge96" class="edge"><title>proc~write_dcx&#45;&gt;interface~h5ltmake_compressed_dataset_double_f</title>
+<path fill="none" stroke="black" d="M44.6966,-172.354C57.0211,-181.955 75.525,-194.67 94,-201 131.148,-213.729 173.502,-219.815 211.737,-222.47"/>
+<polygon fill="black" stroke="black" points="211.684,-225.973 221.882,-223.101 212.119,-218.987 211.684,-225.973"/>
+</g>
+<!-- proc~write_beam_grid -->
+<g id="proc~~write_dcx~~CallsGraph_node8" class="node"><title>proc~write_beam_grid</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node8"><a xlink:href="../proc/write_beam_grid.html" xlink:title="write_beam_grid">
+<polygon fill="#d9534f" stroke="#d9534f" points="186,-192 94,-192 94,-168 186,-168 186,-192"/>
+<text text-anchor="middle" x="140" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_beam_grid</text>
+</a>
+</g>
+</g>
+<!-- proc~write_dcx&#45;&gt;proc~write_beam_grid -->
+<g id="proc~~write_dcx~~CallsGraph_edge97" class="edge"><title>proc~write_dcx&#45;&gt;proc~write_beam_grid</title>
+<path fill="none" stroke="black" d="M58.0702,-165.15C65.953,-166.597 74.8091,-168.222 83.6938,-169.852"/>
+<polygon fill="black" stroke="black" points="83.2192,-173.323 93.6866,-171.686 84.4825,-166.438 83.2192,-173.323"/>
+</g>
+<!-- h5ltset_attribute_string_f -->
+<g id="proc~~write_dcx~~CallsGraph_node9" class="node"><title>h5ltset_attribute_string_f</title>
+<polygon fill="#777777" stroke="#777777" points="391.5,-66 261.5,-66 261.5,-42 391.5,-42 391.5,-66"/>
+<text text-anchor="middle" x="326.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltset_attribute_string_f</text>
+</g>
+<!-- proc~write_dcx&#45;&gt;h5ltset_attribute_string_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge98" class="edge"><title>proc~write_dcx&#45;&gt;h5ltset_attribute_string_f</title>
+<path fill="none" stroke="black" d="M58.0947,-158.451C91.1187,-155.459 146.43,-146.692 186,-121 207.774,-106.863 199.915,-88.6461 222,-75 230.924,-69.4859 241.029,-65.3876 251.341,-62.3477"/>
+<polygon fill="black" stroke="black" points="252.475,-65.6687 261.26,-59.7458 250.699,-58.8978 252.475,-65.6687"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4 -->
+<g id="proc~~write_dcx~~CallsGraph_node10" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_4</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node10"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_4.html" xlink:title="h5ltmake_compressed_dataset_double_f_4">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-108 467,-108 467,-84 688,-84 688,-108"/>
+<text text-anchor="middle" x="577.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_4</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_4 -->
+<g id="proc~~write_dcx~~CallsGraph_edge78" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_4</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M417.094,-209.915C422.046,-207.418 426.734,-204.472 431,-201 462.505,-175.364 435.358,-142.467 467,-117 468.612,-115.703 470.28,-114.477 471.996,-113.32"/>
+<polygon fill="black" stroke="black" points="474.087,-116.152 480.951,-108.082 470.552,-110.11 474.087,-116.152"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7 -->
+<g id="proc~~write_dcx~~CallsGraph_node11" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_7</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node11"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_7.html" xlink:title="h5ltmake_compressed_dataset_double_f_7">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-360 467,-360 467,-336 688,-336 688,-360"/>
+<text text-anchor="middle" x="577.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_7</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_7 -->
+<g id="proc~~write_dcx~~CallsGraph_edge79" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_7</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M417.094,-234.085C422.046,-236.582 426.734,-239.528 431,-243 462.505,-268.636 435.358,-301.533 467,-327 468.612,-328.297 470.28,-329.523 471.996,-330.68"/>
+<polygon fill="black" stroke="black" points="470.552,-333.89 480.951,-335.918 474.087,-327.848 470.552,-333.89"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3 -->
+<g id="proc~~write_dcx~~CallsGraph_node12" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_3</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node12"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_3.html" xlink:title="h5ltmake_compressed_dataset_double_f_3">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-318 467,-318 467,-294 688,-294 688,-318"/>
+<text text-anchor="middle" x="577.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_3</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_3 -->
+<g id="proc~~write_dcx~~CallsGraph_edge80" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_3</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M411.767,-234.071C418.488,-236.527 424.993,-239.471 431,-243 452.198,-255.454 445.736,-272.66 467,-285 470.246,-286.884 473.629,-288.603 477.109,-290.171"/>
+<polygon fill="black" stroke="black" points="475.938,-293.473 486.521,-293.98 478.564,-286.984 475.938,-293.473"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1 -->
+<g id="proc~~write_dcx~~CallsGraph_node13" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_1</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node13"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_1.html" xlink:title="h5ltmake_compressed_dataset_double_f_1">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-276 467,-276 467,-252 688,-252 688,-276"/>
+<text text-anchor="middle" x="577.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_1</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_1 -->
+<g id="proc~~write_dcx~~CallsGraph_edge81" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_1</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M398.853,-234.036C428.938,-239.11 464.12,-245.044 495.201,-250.287"/>
+<polygon fill="black" stroke="black" points="494.693,-253.751 505.136,-251.963 495.858,-246.848 494.693,-253.751"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2 -->
+<g id="proc~~write_dcx~~CallsGraph_node14" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_2</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node14"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_2.html" xlink:title="h5ltmake_compressed_dataset_double_f_2">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-234 467,-234 467,-210 688,-210 688,-234"/>
+<text text-anchor="middle" x="577.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_2</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_2 -->
+<g id="proc~~write_dcx~~CallsGraph_edge82" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_2</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M431.295,-222C439.736,-222 448.307,-222 456.847,-222"/>
+<polygon fill="black" stroke="black" points="456.849,-225.5 466.849,-222 456.849,-218.5 456.849,-225.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5 -->
+<g id="proc~~write_dcx~~CallsGraph_node15" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_5</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node15"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_5.html" xlink:title="h5ltmake_compressed_dataset_double_f_5">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-192 467,-192 467,-168 688,-168 688,-192"/>
+<text text-anchor="middle" x="577.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_5</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_5 -->
+<g id="proc~~write_dcx~~CallsGraph_edge83" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_5</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M398.853,-209.964C428.938,-204.89 464.12,-198.956 495.201,-193.713"/>
+<polygon fill="black" stroke="black" points="495.858,-197.152 505.136,-192.037 494.693,-190.249 495.858,-197.152"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6 -->
+<g id="proc~~write_dcx~~CallsGraph_node16" class="node"><title>proc~h5ltmake_compressed_dataset_double_f_6</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node16"><a xlink:href="../proc/h5ltmake_compressed_dataset_double_f_6.html" xlink:title="h5ltmake_compressed_dataset_double_f_6">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-150 467,-150 467,-126 688,-126 688,-150"/>
+<text text-anchor="middle" x="577.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_compressed_dataset_double_f_6</text>
+</a>
+</g>
+</g>
+<!-- interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_6 -->
+<g id="proc~~write_dcx~~CallsGraph_edge84" class="edge"><title>interface~h5ltmake_compressed_dataset_double_f&#45;&gt;proc~h5ltmake_compressed_dataset_double_f_6</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M411.767,-209.929C418.488,-207.473 424.993,-204.529 431,-201 452.198,-188.546 445.736,-171.34 467,-159 470.246,-157.116 473.629,-155.397 477.109,-153.829"/>
+<polygon fill="black" stroke="black" points="478.564,-157.016 486.521,-150.02 475.938,-150.527 478.564,-157.016"/>
+</g>
+<!-- proc~write_beam_grid&#45;&gt;h5ltmake_dataset_int_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge85" class="edge"><title>proc~write_beam_grid&#45;&gt;h5ltmake_dataset_int_f</title>
+<path fill="none" stroke="black" d="M152.704,-192.018C167.476,-206.446 194.317,-230.283 222,-243 232.18,-247.676 243.397,-251.317 254.575,-254.149"/>
+<polygon fill="black" stroke="black" points="253.828,-257.569 264.362,-256.436 255.421,-250.753 253.828,-257.569"/>
+</g>
+<!-- proc~write_beam_grid&#45;&gt;interface~h5ltmake_compressed_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge88" class="edge"><title>proc~write_beam_grid&#45;&gt;interface~h5ltmake_compressed_dataset_double_f</title>
+<path fill="none" stroke="black" d="M185.881,-192.092C197.606,-195.126 210.251,-198.287 222,-201 232.154,-203.345 242.9,-205.683 253.476,-207.903"/>
+<polygon fill="black" stroke="black" points="253.036,-211.386 263.539,-209.991 254.459,-204.532 253.036,-211.386"/>
+</g>
+<!-- proc~write_beam_grid&#45;&gt;h5ltset_attribute_string_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge89" class="edge"><title>proc~write_beam_grid&#45;&gt;h5ltset_attribute_string_f</title>
+<path fill="none" stroke="black" d="M168.214,-167.885C174.622,-164.114 181.026,-159.477 186,-154 211.938,-125.434 191.797,-99.012 222,-75 230.626,-68.1424 240.906,-63.3472 251.588,-60.0241"/>
+<polygon fill="black" stroke="black" points="252.726,-63.3427 261.476,-57.3691 250.911,-56.5822 252.726,-63.3427"/>
+</g>
+<!-- h5gcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_node28" class="node"><title>h5gcreate_f</title>
+<polygon fill="#777777" stroke="#777777" points="361.5,-192 291.5,-192 291.5,-168 361.5,-168 361.5,-192"/>
+<text text-anchor="middle" x="326.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5gcreate_f</text>
+</g>
+<!-- proc~write_beam_grid&#45;&gt;h5gcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge86" class="edge"><title>proc~write_beam_grid&#45;&gt;h5gcreate_f</title>
+<path fill="none" stroke="black" d="M186.134,-180C215.018,-180 252.326,-180 281.071,-180"/>
+<polygon fill="black" stroke="black" points="281.243,-183.5 291.243,-180 281.243,-176.5 281.243,-183.5"/>
+</g>
+<!-- h5gclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_node29" class="node"><title>h5gclose_f</title>
+<polygon fill="#777777" stroke="#777777" points="358.5,-150 294.5,-150 294.5,-126 358.5,-126 358.5,-150"/>
+<text text-anchor="middle" x="326.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5gclose_f</text>
+</g>
+<!-- proc~write_beam_grid&#45;&gt;h5gclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge87" class="edge"><title>proc~write_beam_grid&#45;&gt;h5gclose_f</title>
+<path fill="none" stroke="black" d="M185.881,-167.908C197.606,-164.874 210.251,-161.713 222,-159 242.443,-154.28 265.291,-149.583 284.308,-145.832"/>
+<polygon fill="black" stroke="black" points="285.012,-149.261 294.155,-143.907 283.669,-142.391 285.012,-149.261"/>
+</g>
+<!-- proc~xyz_to_uvw -->
+<g id="proc~~write_dcx~~CallsGraph_node30" class="node"><title>proc~xyz_to_uvw</title>
+<g id="a_proc~~write_dcx~~CallsGraph_node30"><a xlink:href="../proc/xyz_to_uvw.html" xlink:title="xyz_to_uvw">
+<polygon fill="#d9534f" stroke="#d9534f" points="360.5,-108 292.5,-108 292.5,-84 360.5,-84 360.5,-108"/>
+<text text-anchor="middle" x="326.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xyz_to_uvw</text>
+</a>
+</g>
+</g>
+<!-- proc~write_beam_grid&#45;&gt;proc~xyz_to_uvw -->
+<g id="proc~~write_dcx~~CallsGraph_edge90" class="edge"><title>proc~write_beam_grid&#45;&gt;proc~xyz_to_uvw</title>
+<path fill="none" stroke="black" d="M164.678,-167.939C171.796,-163.891 179.45,-159.099 186,-154 204.104,-139.905 201.861,-127.993 222,-117 240.28,-107.022 262.714,-101.764 282.017,-99.0024"/>
+<polygon fill="black" stroke="black" points="282.592,-102.458 292.079,-97.7422 281.722,-95.5122 282.592,-102.458"/>
+</g>
+<!-- h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_node17" class="node"><title>h5dclose_f</title>
+<polygon fill="#777777" stroke="#777777" points="828.5,-192 764.5,-192 764.5,-168 828.5,-168 828.5,-192"/>
+<text text-anchor="middle" x="796.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5dclose_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge1" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M668.479,-108.02C675.295,-110.492 681.889,-113.454 688,-117 709.264,-129.34 703.354,-145.652 724,-159 733.139,-164.909 743.992,-169.201 754.445,-172.303"/>
+<polygon fill="black" stroke="black" points="753.712,-175.729 764.277,-174.925 755.516,-168.966 753.712,-175.729"/>
+</g>
+<!-- h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_node18" class="node"><title>h5pset_deflate_f</title>
+<polygon fill="#777777" stroke="#777777" points="842.5,-150 750.5,-150 750.5,-126 842.5,-126 842.5,-150"/>
+<text text-anchor="middle" x="796.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5pset_deflate_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge2" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M641.334,-108.012C656.607,-110.942 672.892,-114.076 688,-117 704.929,-120.277 723.353,-123.867 740.089,-127.138"/>
+<polygon fill="black" stroke="black" points="739.777,-130.643 750.263,-129.127 741.12,-123.773 739.777,-130.643"/>
+</g>
+<!-- h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_node19" class="node"><title>h5dcreate_f</title>
+<polygon fill="#777777" stroke="#777777" points="831.5,-108 761.5,-108 761.5,-84 831.5,-84 831.5,-108"/>
+<text text-anchor="middle" x="796.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5dcreate_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge3" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M688.271,-96C710.52,-96 732.697,-96 751.06,-96"/>
+<polygon fill="black" stroke="black" points="751.123,-99.5001 761.123,-96 751.123,-92.5001 751.123,-99.5001"/>
+</g>
+<!-- h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_node20" class="node"><title>h5pclose_f</title>
+<polygon fill="#777777" stroke="#777777" points="828.5,-66 764.5,-66 764.5,-42 828.5,-42 828.5,-66"/>
+<text text-anchor="middle" x="796.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5pclose_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge4" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M640.683,-83.9645C677.186,-76.8995 722.298,-68.1681 754.389,-61.9569"/>
+<polygon fill="black" stroke="black" points="755.171,-65.3707 764.324,-60.0342 753.841,-58.4982 755.171,-65.3707"/>
+</g>
+<!-- h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_node21" class="node"><title>h5sclose_f</title>
+<polygon fill="#777777" stroke="#777777" points="828.5,-24 764.5,-24 764.5,-0 828.5,-0 828.5,-24"/>
+<text text-anchor="middle" x="796.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5sclose_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge5" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M603.873,-83.8795C632.609,-70.4204 681.031,-48.5459 724,-33 733.763,-29.4678 744.431,-26.0865 754.478,-23.1086"/>
+<polygon fill="black" stroke="black" points="755.629,-26.4189 764.26,-20.2745 753.681,-19.6954 755.629,-26.4189"/>
+</g>
+<!-- h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_node22" class="node"><title>h5dwrite_f</title>
+<polygon fill="#777777" stroke="#777777" points="827.5,-444 765.5,-444 765.5,-420 827.5,-420 827.5,-444"/>
+<text text-anchor="middle" x="796.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5dwrite_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge6" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M677.478,-108.118C681.288,-110.664 684.828,-113.606 688,-117 777.885,-213.18 638.843,-310.61 724,-411 731.832,-420.233 743.493,-425.522 755.137,-428.517"/>
+<polygon fill="black" stroke="black" points="754.769,-432.014 765.269,-430.599 756.178,-425.157 754.769,-432.014"/>
+</g>
+<!-- h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_node23" class="node"><title>h5pset_shuffle_f</title>
+<polygon fill="#777777" stroke="#777777" points="842,-402 751,-402 751,-378 842,-378 842,-402"/>
+<text text-anchor="middle" x="796.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5pset_shuffle_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge7" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M677.394,-108.197C681.227,-110.721 684.794,-113.638 688,-117 766.074,-198.881 649.953,-283.461 724,-369 728.665,-374.389 734.634,-378.431 741.129,-381.457"/>
+<polygon fill="black" stroke="black" points="740.34,-384.902 750.931,-385.2 742.838,-378.363 740.34,-384.902"/>
+</g>
+<!-- h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_node24" class="node"><title>h5screate_simple_f</title>
+<polygon fill="#777777" stroke="#777777" points="849.5,-360 743.5,-360 743.5,-336 849.5,-336 849.5,-360"/>
+<text text-anchor="middle" x="796.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5screate_simple_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge8" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M677.28,-108.308C681.143,-110.803 684.748,-113.683 688,-117 754.297,-184.616 661.031,-256.275 724,-327 727.034,-330.408 730.589,-333.275 734.464,-335.686"/>
+<polygon fill="black" stroke="black" points="732.885,-338.81 743.379,-340.269 736.085,-332.584 732.885,-338.81"/>
+</g>
+<!-- h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_node25" class="node"><title>h5ltmake_dataset_double_f</title>
+<polygon fill="#777777" stroke="#777777" points="869,-318 724,-318 724,-294 869,-294 869,-318"/>
+<text text-anchor="middle" x="796.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5ltmake_dataset_double_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge9" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M676.623,-108.171C680.714,-110.691 684.541,-113.615 688,-117 742.576,-170.409 672.055,-229.029 724,-285 724.916,-285.987 725.875,-286.928 726.873,-287.826"/>
+<polygon fill="black" stroke="black" points="725.055,-290.832 735.198,-293.892 729.178,-285.174 725.055,-290.832"/>
+</g>
+<!-- h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_node26" class="node"><title>h5pcreate_f</title>
+<polygon fill="#777777" stroke="#777777" points="831.5,-276 761.5,-276 761.5,-252 831.5,-252 831.5,-276"/>
+<text text-anchor="middle" x="796.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5pcreate_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge10" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M675.598,-108.023C680.041,-110.567 684.215,-113.537 688,-117 730.97,-156.314 682.97,-201.666 724,-243 731.46,-250.515 741.457,-255.371 751.608,-258.5"/>
+<polygon fill="black" stroke="black" points="750.752,-261.894 761.309,-261.002 752.5,-255.116 750.752,-261.894"/>
+</g>
+<!-- h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_node27" class="node"><title>h5pset_chunk_f</title>
+<polygon fill="#777777" stroke="#777777" points="840.5,-234 752.5,-234 752.5,-210 840.5,-210 840.5,-234"/>
+<text text-anchor="middle" x="796.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">h5pset_chunk_f</text>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge11" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_4&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M674.049,-108.082C679.004,-110.592 683.702,-113.541 688,-117 719.642,-142.467 693.619,-174.041 724,-201 729.455,-205.841 735.975,-209.568 742.827,-212.437"/>
+<polygon fill="black" stroke="black" points="741.711,-215.756 752.306,-215.842 744.078,-209.168 741.711,-215.756"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge12" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M675.598,-335.977C680.041,-333.433 684.215,-330.463 688,-327 730.97,-287.686 682.97,-242.334 724,-201 732.095,-192.845 743.178,-187.821 754.203,-184.737"/>
+<polygon fill="black" stroke="black" points="755.271,-188.082 764.223,-182.416 753.692,-181.263 755.271,-188.082"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge13" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M676.623,-335.829C680.714,-333.309 684.541,-330.385 688,-327 742.576,-273.591 672.055,-214.971 724,-159 728.671,-153.967 734.479,-150.118 740.752,-147.178"/>
+<polygon fill="black" stroke="black" points="742.153,-150.389 750.195,-143.491 739.607,-143.868 742.153,-150.389"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge14" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M677.28,-335.692C681.143,-333.197 684.748,-330.317 688,-327 754.297,-259.384 661.031,-187.725 724,-117 731.171,-108.945 741.254,-103.909 751.591,-100.781"/>
+<polygon fill="black" stroke="black" points="752.627,-104.13 761.493,-98.3289 750.945,-97.335 752.627,-104.13"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge15" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M677.394,-335.803C681.227,-333.279 684.794,-330.362 688,-327 766.074,-245.119 649.953,-160.539 724,-75 731.728,-66.0727 743.033,-60.8417 754.383,-57.806"/>
+<polygon fill="black" stroke="black" points="755.245,-61.2005 764.279,-55.6657 753.766,-54.3587 755.245,-61.2005"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge16" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M677.478,-335.882C681.288,-333.336 684.828,-330.394 688,-327 777.885,-230.82 638.843,-133.39 724,-33 731.638,-23.9957 742.917,-18.7425 754.271,-15.7103"/>
+<polygon fill="black" stroke="black" points="755.138,-19.104 764.178,-13.5789 753.666,-12.2606 755.138,-19.104"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge17" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M603.873,-360.121C632.609,-373.58 681.031,-395.454 724,-411 734.141,-414.669 745.259,-418.175 755.643,-421.236"/>
+<polygon fill="black" stroke="black" points="754.739,-424.618 765.317,-424.024 756.677,-417.891 754.739,-424.618"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge18" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M640.683,-360.036C672.302,-366.155 710.38,-373.525 740.861,-379.425"/>
+<polygon fill="black" stroke="black" points="740.403,-382.901 750.886,-381.365 741.733,-376.028 740.403,-382.901"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge19" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M688.271,-348C703.752,-348 719.197,-348 733.348,-348"/>
+<polygon fill="black" stroke="black" points="733.405,-351.5 743.404,-348 733.404,-344.5 733.405,-351.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge20" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M641.334,-335.988C656.607,-333.058 672.892,-329.924 688,-327 699.668,-324.741 712.047,-322.334 724.093,-319.985"/>
+<polygon fill="black" stroke="black" points="724.966,-323.381 734.111,-318.03 723.626,-316.51 724.966,-323.381"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge21" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M668.479,-335.98C675.295,-333.508 681.889,-330.546 688,-327 709.264,-314.66 703.354,-298.348 724,-285 732.306,-279.63 742.026,-275.595 751.577,-272.576"/>
+<polygon fill="black" stroke="black" points="752.739,-275.884 761.401,-269.784 750.825,-269.151 752.739,-275.884"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge22" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_7&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M674.049,-335.918C679.004,-333.408 683.702,-330.459 688,-327 719.642,-301.533 693.619,-269.959 724,-243 729.455,-238.159 735.975,-234.432 742.827,-231.563"/>
+<polygon fill="black" stroke="black" points="744.078,-234.832 752.306,-228.158 741.711,-228.244 744.078,-234.832"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge23" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M674.049,-293.918C679.004,-291.408 683.702,-288.459 688,-285 719.642,-259.533 693.619,-227.959 724,-201 732.52,-193.439 743.637,-188.595 754.557,-185.494"/>
+<polygon fill="black" stroke="black" points="755.55,-188.855 764.45,-183.107 753.908,-182.05 755.55,-188.855"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge24" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M675.598,-293.977C680.041,-291.433 684.215,-288.463 688,-285 730.97,-245.686 682.97,-200.334 724,-159 728.777,-154.188 734.594,-150.466 740.825,-147.59"/>
+<polygon fill="black" stroke="black" points="742.128,-150.839 750.179,-143.952 739.591,-144.315 742.128,-150.839"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge25" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M676.623,-293.829C680.714,-291.309 684.541,-288.385 688,-285 742.576,-231.591 672.055,-172.971 724,-117 731.27,-109.167 741.292,-104.202 751.534,-101.071"/>
+<polygon fill="black" stroke="black" points="752.498,-104.437 761.338,-98.5962 750.785,-97.6501 752.498,-104.437"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge26" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M677.28,-293.692C681.143,-291.197 684.748,-288.317 688,-285 754.297,-217.384 661.031,-145.725 724,-75 731.852,-66.1813 743.192,-60.9814 754.537,-57.9409"/>
+<polygon fill="black" stroke="black" points="755.393,-61.3365 764.419,-55.7881 753.903,-54.4969 755.393,-61.3365"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge27" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M677.394,-293.803C681.227,-291.279 684.794,-288.362 688,-285 766.074,-203.119 649.953,-118.539 724,-33 731.728,-24.0727 743.033,-18.8417 754.383,-15.806"/>
+<polygon fill="black" stroke="black" points="755.245,-19.2005 764.279,-13.6657 753.766,-12.3587 755.245,-19.2005"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge28" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M674.049,-318.082C679.004,-320.592 683.702,-323.541 688,-327 719.642,-352.467 693.619,-384.041 724,-411 732.668,-418.692 744.025,-423.572 755.127,-426.667"/>
+<polygon fill="black" stroke="black" points="754.63,-430.145 765.167,-429.036 756.238,-423.332 754.63,-430.145"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge29" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M668.479,-318.02C675.295,-320.492 681.889,-323.454 688,-327 709.264,-339.34 703.354,-355.652 724,-369 729.276,-372.411 735.123,-375.284 741.135,-377.699"/>
+<polygon fill="black" stroke="black" points="740.065,-381.034 750.66,-381.131 742.438,-374.449 740.065,-381.034"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge30" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M641.334,-318.012C656.607,-320.942 672.892,-324.076 688,-327 702.638,-329.833 718.393,-332.901 733.209,-335.794"/>
+<polygon fill="black" stroke="black" points="732.804,-339.281 743.29,-337.763 734.147,-332.411 732.804,-339.281"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge31" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M688.271,-306C696.866,-306 705.45,-306 713.808,-306"/>
+<polygon fill="black" stroke="black" points="713.875,-309.5 723.875,-306 713.875,-302.5 713.875,-309.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge32" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M641.334,-293.988C656.607,-291.058 672.892,-287.924 688,-285 708.731,-280.987 731.704,-276.504 751.072,-272.714"/>
+<polygon fill="black" stroke="black" points="751.991,-276.101 761.132,-270.745 750.646,-269.232 751.991,-276.101"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge33" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_3&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M668.479,-293.98C675.295,-291.508 681.889,-288.546 688,-285 709.264,-272.66 703.354,-256.348 724,-243 729.694,-239.319 736.053,-236.265 742.566,-233.735"/>
+<polygon fill="black" stroke="black" points="743.868,-236.988 752.159,-230.393 741.564,-230.378 743.868,-236.988"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge34" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M668.479,-251.98C675.295,-249.508 681.889,-246.546 688,-243 709.264,-230.66 703.354,-214.348 724,-201 733.139,-195.091 743.992,-190.799 754.445,-187.697"/>
+<polygon fill="black" stroke="black" points="755.516,-191.034 764.277,-185.075 753.712,-184.271 755.516,-191.034"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge35" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M674.049,-251.918C679.004,-249.408 683.702,-246.459 688,-243 719.642,-217.533 693.619,-185.959 724,-159 728.89,-154.661 734.635,-151.217 740.708,-148.483"/>
+<polygon fill="black" stroke="black" points="742.362,-151.597 750.443,-144.745 739.853,-145.062 742.362,-151.597"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge36" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M675.598,-251.977C680.041,-249.433 684.215,-246.463 688,-243 730.97,-203.686 682.97,-158.334 724,-117 731.46,-109.485 741.457,-104.629 751.608,-101.5"/>
+<polygon fill="black" stroke="black" points="752.5,-104.884 761.309,-98.9979 750.752,-98.1059 752.5,-104.884"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge37" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M676.623,-251.829C680.714,-249.309 684.541,-246.385 688,-243 742.576,-189.591 672.055,-130.971 724,-75 731.964,-66.4187 743.232,-61.2802 754.472,-58.2227"/>
+<polygon fill="black" stroke="black" points="755.263,-61.6324 764.26,-56.0373 753.738,-54.8006 755.263,-61.6324"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge38" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M677.28,-251.692C681.143,-249.197 684.748,-246.317 688,-243 754.297,-175.384 661.031,-103.725 724,-33 731.852,-24.1813 743.192,-18.9814 754.537,-15.9409"/>
+<polygon fill="black" stroke="black" points="755.393,-19.3365 764.419,-13.7881 753.903,-12.4969 755.393,-19.3365"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge39" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M675.598,-276.023C680.041,-278.567 684.215,-281.537 688,-285 730.97,-324.314 682.97,-369.666 724,-411 732.389,-419.451 743.988,-424.54 755.404,-427.591"/>
+<polygon fill="black" stroke="black" points="754.784,-431.039 765.304,-429.782 756.297,-424.204 754.784,-431.039"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge40" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M674.049,-276.082C679.004,-278.592 683.702,-281.541 688,-285 719.642,-310.467 693.619,-342.041 724,-369 729.071,-373.5 735.063,-377.038 741.385,-379.819"/>
+<polygon fill="black" stroke="black" points="740.224,-383.121 750.816,-383.375 742.694,-376.572 740.224,-383.121"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge41" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M668.479,-276.02C675.295,-278.492 681.889,-281.454 688,-285 709.264,-297.34 703.354,-313.652 724,-327 727.117,-329.015 730.433,-330.842 733.865,-332.498"/>
+<polygon fill="black" stroke="black" points="732.591,-335.76 743.161,-336.494 735.355,-329.329 732.591,-335.76"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge42" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M641.334,-276.012C656.607,-278.942 672.892,-282.076 688,-285 699.668,-287.259 712.047,-289.666 724.093,-292.015"/>
+<polygon fill="black" stroke="black" points="723.626,-295.49 734.111,-293.97 724.966,-288.619 723.626,-295.49"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge43" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M688.271,-264C710.52,-264 732.697,-264 751.06,-264"/>
+<polygon fill="black" stroke="black" points="751.123,-267.5 761.123,-264 751.123,-260.5 751.123,-267.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge44" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_1&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M641.334,-251.988C656.607,-249.058 672.892,-245.924 688,-243 705.713,-239.571 725.063,-235.8 742.403,-232.41"/>
+<polygon fill="black" stroke="black" points="743.211,-235.818 752.353,-230.464 741.867,-228.949 743.211,-235.818"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge45" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M641.334,-209.988C656.607,-207.058 672.892,-203.924 688,-201 709.94,-196.753 734.389,-191.98 754.421,-188.059"/>
+<polygon fill="black" stroke="black" points="755.317,-191.45 764.458,-186.093 753.971,-184.581 755.317,-191.45"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge46" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M668.479,-209.98C675.295,-207.508 681.889,-204.546 688,-201 709.264,-188.66 703.354,-172.348 724,-159 729.081,-155.715 734.692,-152.93 740.469,-150.571"/>
+<polygon fill="black" stroke="black" points="742.089,-153.705 750.285,-146.99 739.691,-147.129 742.089,-153.705"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge47" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M674.049,-209.918C679.004,-207.408 683.702,-204.459 688,-201 719.642,-175.533 693.619,-143.959 724,-117 731.693,-110.173 741.504,-105.561 751.374,-102.447"/>
+<polygon fill="black" stroke="black" points="752.442,-105.784 761.189,-99.8054 750.623,-99.0249 752.442,-105.784"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge48" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M675.598,-209.977C680.041,-207.433 684.215,-204.463 688,-201 730.97,-161.686 682.97,-116.334 724,-75 732.095,-66.8453 743.178,-61.8213 754.203,-58.7372"/>
+<polygon fill="black" stroke="black" points="755.271,-62.0825 764.223,-56.416 753.692,-55.263 755.271,-62.0825"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge49" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M676.623,-209.829C680.714,-207.309 684.541,-204.385 688,-201 742.576,-147.591 672.055,-88.9714 724,-33 731.964,-24.4187 743.232,-19.2802 754.472,-16.2227"/>
+<polygon fill="black" stroke="black" points="755.263,-19.6324 764.26,-14.0373 753.738,-12.8006 755.263,-19.6324"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge50" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M676.623,-234.171C680.714,-236.691 684.541,-239.615 688,-243 742.576,-296.409 672.055,-355.029 724,-411 732.168,-419.801 743.812,-424.981 755.337,-428.008"/>
+<polygon fill="black" stroke="black" points="754.833,-431.48 765.345,-430.152 756.299,-424.635 754.833,-431.48"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge51" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M675.598,-234.023C680.041,-236.567 684.215,-239.537 688,-243 730.97,-282.314 682.97,-327.666 724,-369 728.899,-373.935 734.893,-377.724 741.306,-380.63"/>
+<polygon fill="black" stroke="black" points="740.331,-384.004 750.922,-384.286 742.819,-377.461 740.331,-384.004"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge52" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M674.049,-234.082C679.004,-236.592 683.702,-239.541 688,-243 719.642,-268.467 693.619,-300.041 724,-327 727.157,-329.801 730.671,-332.23 734.399,-334.335"/>
+<polygon fill="black" stroke="black" points="732.892,-337.494 743.42,-338.683 735.931,-331.188 732.892,-337.494"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge53" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M668.479,-234.02C675.295,-236.492 681.889,-239.454 688,-243 709.264,-255.34 703.354,-271.652 724,-285 726.631,-286.701 729.405,-288.268 732.27,-289.712"/>
+<polygon fill="black" stroke="black" points="731.112,-293.028 741.67,-293.913 733.968,-286.637 731.112,-293.028"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge54" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M641.334,-234.012C656.607,-236.942 672.892,-240.076 688,-243 708.731,-247.013 731.704,-251.496 751.072,-255.286"/>
+<polygon fill="black" stroke="black" points="750.646,-258.768 761.132,-257.255 751.991,-251.899 750.646,-258.768"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge55" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_2&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M688.271,-222C706.984,-222 725.646,-222 742.031,-222"/>
+<polygon fill="black" stroke="black" points="742.447,-225.5 752.447,-222 742.447,-218.5 742.447,-225.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge56" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M688.271,-180C711.865,-180 735.378,-180 754.348,-180"/>
+<polygon fill="black" stroke="black" points="754.391,-183.5 764.391,-180 754.391,-176.5 754.391,-183.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge57" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M641.334,-167.988C656.607,-165.058 672.892,-161.924 688,-159 704.929,-155.723 723.353,-152.133 740.089,-148.862"/>
+<polygon fill="black" stroke="black" points="741.12,-152.227 750.263,-146.873 739.777,-145.357 741.12,-152.227"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge58" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M668.479,-167.98C675.295,-165.508 681.889,-162.546 688,-159 709.264,-146.66 703.354,-130.348 724,-117 732.306,-111.63 742.026,-107.595 751.577,-104.576"/>
+<polygon fill="black" stroke="black" points="752.739,-107.884 761.401,-101.784 750.825,-101.151 752.739,-107.884"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge59" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M674.049,-167.918C679.004,-165.408 683.702,-162.459 688,-159 719.642,-133.533 693.619,-101.959 724,-75 732.52,-67.4394 743.637,-62.5955 754.557,-59.4937"/>
+<polygon fill="black" stroke="black" points="755.55,-62.8547 764.45,-57.1071 753.908,-56.05 755.55,-62.8547"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge60" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M675.598,-167.977C680.041,-165.433 684.215,-162.463 688,-159 730.97,-119.686 682.97,-74.3341 724,-33 732.095,-24.8453 743.178,-19.8213 754.203,-16.7372"/>
+<polygon fill="black" stroke="black" points="755.271,-20.0825 764.223,-14.416 753.692,-13.263 755.271,-20.0825"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge61" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M677.28,-192.308C681.143,-194.803 684.748,-197.683 688,-201 754.297,-268.616 661.031,-340.275 724,-411 731.985,-419.968 743.578,-425.194 755.113,-428.212"/>
+<polygon fill="black" stroke="black" points="754.636,-431.688 765.144,-430.334 756.085,-424.84 754.636,-431.688"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge62" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M676.623,-192.171C680.714,-194.691 684.541,-197.615 688,-201 742.576,-254.409 672.055,-313.029 724,-369 728.79,-374.161 734.774,-378.076 741.229,-381.043"/>
+<polygon fill="black" stroke="black" points="740.347,-384.453 750.938,-384.745 742.841,-377.912 740.347,-384.453"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge63" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M675.598,-192.023C680.041,-194.567 684.215,-197.537 688,-201 730.97,-240.314 682.97,-285.666 724,-327 727.025,-330.047 730.467,-332.657 734.168,-334.892"/>
+<polygon fill="black" stroke="black" points="732.693,-338.068 743.196,-339.456 735.85,-331.821 732.693,-338.068"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge64" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M674.049,-192.082C679.004,-194.592 683.702,-197.541 688,-201 719.642,-226.467 693.619,-258.041 724,-285 725.488,-286.32 727.055,-287.558 728.686,-288.717"/>
+<polygon fill="black" stroke="black" points="726.934,-291.748 737.31,-293.893 730.537,-285.746 726.934,-291.748"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge65" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M668.479,-192.02C675.295,-194.492 681.889,-197.454 688,-201 709.264,-213.34 703.354,-229.652 724,-243 732.306,-248.37 742.026,-252.405 751.577,-255.424"/>
+<polygon fill="black" stroke="black" points="750.825,-258.849 761.401,-258.216 752.739,-252.116 750.825,-258.849"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge66" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_5&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M641.334,-192.012C656.607,-194.942 672.892,-198.076 688,-201 705.713,-204.429 725.063,-208.2 742.403,-211.59"/>
+<polygon fill="black" stroke="black" points="741.867,-215.051 752.353,-213.536 743.211,-208.182 741.867,-215.051"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5dclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge67" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5dclose_f</title>
+<path fill="none" stroke="black" d="M641.334,-150.012C656.607,-152.942 672.892,-156.076 688,-159 709.94,-163.247 734.389,-168.02 754.421,-171.941"/>
+<polygon fill="black" stroke="black" points="753.971,-175.419 764.458,-173.907 755.317,-168.55 753.971,-175.419"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pset_deflate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge68" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pset_deflate_f</title>
+<path fill="none" stroke="black" d="M688.271,-138C706.294,-138 724.27,-138 740.21,-138"/>
+<polygon fill="black" stroke="black" points="740.371,-141.5 750.371,-138 740.371,-134.5 740.371,-141.5"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5dcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge69" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5dcreate_f</title>
+<path fill="none" stroke="black" d="M641.334,-125.988C656.607,-123.058 672.892,-119.924 688,-117 708.731,-112.987 731.704,-108.504 751.072,-104.714"/>
+<polygon fill="black" stroke="black" points="751.991,-108.101 761.132,-102.745 750.646,-101.232 751.991,-108.101"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge70" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pclose_f</title>
+<path fill="none" stroke="black" d="M668.479,-125.98C675.295,-123.508 681.889,-120.546 688,-117 709.264,-104.66 703.354,-88.3482 724,-75 733.139,-69.0915 743.992,-64.7985 754.445,-61.6974"/>
+<polygon fill="black" stroke="black" points="755.516,-65.0342 764.277,-59.0755 753.712,-58.2706 755.516,-65.0342"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5sclose_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge71" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5sclose_f</title>
+<path fill="none" stroke="black" d="M674.049,-125.918C679.004,-123.408 683.702,-120.459 688,-117 719.642,-91.533 693.619,-59.9588 724,-33 732.52,-25.4394 743.637,-20.5955 754.557,-17.4937"/>
+<polygon fill="black" stroke="black" points="755.55,-20.8547 764.45,-15.1071 753.908,-14.05 755.55,-20.8547"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5dwrite_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge72" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5dwrite_f</title>
+<path fill="none" stroke="black" d="M677.394,-150.197C681.227,-152.721 684.794,-155.638 688,-159 766.074,-240.881 649.953,-325.461 724,-411 731.924,-420.154 743.61,-425.422 755.249,-428.421"/>
+<polygon fill="black" stroke="black" points="754.866,-431.916 765.368,-430.514 756.284,-425.061 754.866,-431.916"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pset_shuffle_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge73" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pset_shuffle_f</title>
+<path fill="none" stroke="black" d="M677.28,-150.308C681.143,-152.803 684.748,-155.683 688,-159 754.297,-226.616 661.031,-298.275 724,-369 728.682,-374.259 734.605,-378.23 741.029,-381.225"/>
+<polygon fill="black" stroke="black" points="740.124,-384.627 750.714,-384.949 742.636,-378.093 740.124,-384.627"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5screate_simple_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge74" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5screate_simple_f</title>
+<path fill="none" stroke="black" d="M676.623,-150.171C680.714,-152.691 684.541,-155.615 688,-159 742.576,-212.409 672.055,-271.029 724,-327 726.97,-330.2 730.4,-332.922 734.117,-335.235"/>
+<polygon fill="black" stroke="black" points="732.735,-338.461 743.228,-339.926 735.939,-332.237 732.735,-338.461"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5ltmake_dataset_double_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge75" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5ltmake_dataset_double_f</title>
+<path fill="none" stroke="black" d="M675.598,-150.023C680.041,-152.567 684.215,-155.537 688,-159 730.97,-198.314 682.97,-243.666 724,-285 725.082,-286.09 726.218,-287.125 727.4,-288.106"/>
+<polygon fill="black" stroke="black" points="725.562,-291.089 735.793,-293.841 729.511,-285.31 725.562,-291.089"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pcreate_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge76" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pcreate_f</title>
+<path fill="none" stroke="black" d="M674.049,-150.082C679.004,-152.592 683.702,-155.541 688,-159 719.642,-184.467 693.619,-216.041 724,-243 731.693,-249.827 741.504,-254.439 751.374,-257.553"/>
+<polygon fill="black" stroke="black" points="750.623,-260.975 761.189,-260.195 752.442,-254.216 750.623,-260.975"/>
+</g>
+<!-- proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pset_chunk_f -->
+<g id="proc~~write_dcx~~CallsGraph_edge77" class="edge"><title>proc~h5ltmake_compressed_dataset_double_f_6&#45;&gt;h5pset_chunk_f</title>
+<path fill="none" stroke="black" d="M668.479,-150.02C675.295,-152.492 681.889,-155.454 688,-159 709.264,-171.34 703.354,-187.652 724,-201 729.694,-204.681 736.053,-207.735 742.566,-210.265"/>
+<polygon fill="black" stroke="black" points="741.564,-213.622 752.159,-213.607 743.868,-207.012 741.564,-213.622"/>
+</g>
+</g>
+</svg>
+</div>
+                <script>var panprocwrite_dcxCallsGraph = svgPanZoom('#procwrite_dcxCallsGraph', {
+                    zoomEnabled: true,
+                    controlIconsEnabled: true,
+                    fit: true,
+                    center: true,});
+                    </script>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+Nodes of different colours represent the following:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="26pt"
+ viewBox="0.00 0.00 641.00 25.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.811906 0.811906) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 785.5,-28 785.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Type -->
+<g id="node3" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="212,-24 158,-24 158,-0 212,-0 212,-24"/>
+<text text-anchor="middle" x="185" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- Subroutine -->
+<g id="node4" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="294,-24 230,-24 230,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="262" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node5" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node6" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="439.5,-24 384.5,-24 384.5,-0 439.5,-0 439.5,-24"/>
+<text text-anchor="middle" x="412" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node7" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="594,-24 458,-24 458,-0 594,-0 594,-24"/>
+<text text-anchor="middle" x="526" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node8" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="666,-24 612,-24 612,-0 666,-0 666,-24"/>
+<text text-anchor="middle" x="639" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node9" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="781.5,-24 684.5,-24 684.5,-0 781.5,-0 781.5,-24"/>
+<text text-anchor="middle" x="733" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<h5>Module Graph</h5>
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module using it.</p>
+<h5>Type Graph</h5>
+<p>Solid arrows point from one derived type to another which extends
+(inherits from) it. Dashed arrows point from a derived type to another
+type containing it as a components, with a label listing the name(s) of
+said component(s).</p>
+<h5>Call Graph</h5>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+     
+     <h3>Called By</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: proc~~write_dcx~~CalledByGraph Pages: 1 -->
+<svg id="procwrite_dcxCalledByGraph" width="156pt" height="32pt"
+ viewBox="0.00 0.00 156.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~write_dcx~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~write_dcx~~CalledByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 152,-28 152,4 -4,4"/>
+<!-- proc~write_dcx -->
+<g id="proc~~write_dcx~~CalledByGraph_node1" class="node"><title>proc~write_dcx</title>
+<polygon fill="none" stroke="black" points="148,-24 90,-24 90,-0 148,-0 148,-24"/>
+<text text-anchor="middle" x="119" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">write_dcx</text>
+</g>
+<!-- program~fidasim -->
+<g id="proc~~write_dcx~~CalledByGraph_node2" class="node"><title>program~fidasim</title>
+<g id="a_proc~~write_dcx~~CalledByGraph_node2"><a xlink:href="../program/fidasim.html" xlink:title="fidasim">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fidasim</text>
+</a>
+</g>
+</g>
+<!-- program~fidasim&#45;&gt;proc~write_dcx -->
+<g id="proc~~write_dcx~~CalledByGraph_edge1" class="edge"><title>program~fidasim&#45;&gt;proc~write_dcx</title>
+<path fill="none" stroke="black" d="M54.0317,-12C62.0039,-12 70.9483,-12 79.5645,-12"/>
+<polygon fill="black" stroke="black" points="79.8244,-15.5001 89.8243,-12 79.8243,-8.5001 79.8244,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+Nodes of different colours represent the following:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="26pt"
+ viewBox="0.00 0.00 641.00 25.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.811906 0.811906) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 785.5,-28 785.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Type -->
+<g id="node3" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="212,-24 158,-24 158,-0 212,-0 212,-24"/>
+<text text-anchor="middle" x="185" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- Subroutine -->
+<g id="node4" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="294,-24 230,-24 230,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="262" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node5" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node6" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="439.5,-24 384.5,-24 384.5,-0 439.5,-0 439.5,-24"/>
+<text text-anchor="middle" x="412" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node7" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="594,-24 458,-24 458,-0 594,-0 594,-24"/>
+<text text-anchor="middle" x="526" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node8" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="666,-24 612,-24 612,-0 666,-0 666,-24"/>
+<text text-anchor="middle" x="639" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node9" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="781.5,-24 684.5,-24 684.5,-0 781.5,-0 781.5,-24"/>
+<text text-anchor="middle" x="733" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<h5>Module Graph</h5>
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module using it.</p>
+<h5>Type Graph</h5>
+<p>Solid arrows point from one derived type to another which extends
+(inherits from) it. Dashed arrows point from a derived type to another
+type containing it as a components, with a label listing the name(s) of
+said component(s).</p>
+<h5>Call Graph</h5>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+    <br>
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fid%7E12"></span>integer(kind=HID_T),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>fid</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dims%7E8"></span>integer(kind=HSIZE_T),</td>
+  
+  <td>public,</td>
+  <td>dimension(4)</td><td>::</td>
+  <td><strong>dims</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d%7E5"></span>integer(kind=HSIZE_T),</td>
+  
+  <td>public,</td>
+  <td>dimension(1)</td><td>::</td>
+  <td><strong>d</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-error%7E14"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>error</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-filename%7E2"></span>character(len=120),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>filename</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i%7E17"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lambda_arr"></span>real(kind=double),</td>
+  
+  <td>public,</td>
+  <td>dimension(:), allocatable</td><td>::</td>
+  <td><strong>lambda_arr</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dcx_spec"></span>real(kind=double),</td>
+  
+  <td>public,</td>
+  <td>dimension(:,:), allocatable</td><td>::</td>
+  <td><strong>dcx_spec</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    </div>
+  </div>
+
+    <hr>
+    <footer>
+        <div class="row">
+        <div class="col-md-4">&copy; 2016 </div>
+	<div class="col-md-4"><span class="text-center"> Fortran Program was developed by Luke Stagner</span></div>
+        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
+        </div>
+        <br>
+    </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>

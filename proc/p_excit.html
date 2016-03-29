@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	 <meta name="description" content="Some Fortran program which I wrote.">
+    
+    <meta name="author" content="Chris MacMackin" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>p_excit &ndash; Fortran Program</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">Fortran Program </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+				
+                
+            <li><a href="../lists/files.html">Source Files</a></li>
+				
+				
+            <li><a href="../lists/modules.html">Modules</a></li>
+				
+				
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+				
+								
+            <li><a href="../lists/types.html">Derived Types</a></li>
+				
+				
+            <li><a href="../lists/programs.html">Programs</a></li>
+				
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>p_excit
+    <small>Function</small>
+    
+    </h1>
+	 
+<div class="row">
+<div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+    <li><i class="fa fa-code"></i><a href="../src/atomic_tables.f90"> Source File</a></li>
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+     <li><a href='../sourcefile/atomic_tables.f90.html'>atomic_tables.f90</a></li>
+  
+     <li><a href='../module/atomic_tables.html'>atomic_tables</a></li>
+  
+     <li class="active">p_excit</li>
+  </ol>
+</div>
+</div>
+</div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-3">
+    
+<div id="sidebar">
+  
+  
+  
+  <div class="panel panel-primary">
+    <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars">Variables</a></h3></div>
+    <div id="vars" class="panel-collapse collapse">
+      <div class="list-group">
+        
+        <a class="list-group-item" href="../proc/p_excit.html#variable-sigma_full%7E2">sigma_full</a>
+        
+        <a class="list-group-item" href="../proc/p_excit.html#variable-n%7E36">n</a>
+        
+        <a class="list-group-item" href="../proc/p_excit.html#variable-m%7E12">m</a>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <hr>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprocs">All Procedures</a></h3></div>
+    <div id="allprocs" class="panel-collapse collapse">
+        <div class="list-group">
+          
+          <a class="list-group-item" href="../proc/aq_cx.html">Aq_cx</a>
+          
+          <a class="list-group-item" href="../proc/aq_cx_n.html">Aq_cx_n</a>
+          
+          <a class="list-group-item" href="../proc/aq_cx_n_adas.html">Aq_cx_n_adas</a>
+          
+          <a class="list-group-item" href="../proc/aq_cx_n_janev.html">Aq_cx_n_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit.html">Aq_excit</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_2_janev.html">Aq_excit_1_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_3_janev.html">Aq_excit_1_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_4_janev.html">Aq_excit_1_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_5_janev.html">Aq_excit_1_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_1_janev.html">Aq_excit_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_10_janev.html">Aq_excit_2_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_3_janev.html">Aq_excit_2_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_4_janev.html">Aq_excit_2_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_5_janev.html">Aq_excit_2_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_6_janev.html">Aq_excit_2_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_7_janev.html">Aq_excit_2_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_8_janev.html">Aq_excit_2_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_9_janev.html">Aq_excit_2_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_2_janev.html">Aq_excit_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_10_janev.html">Aq_excit_3_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_4_janev.html">Aq_excit_3_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_5_janev.html">Aq_excit_3_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_6_janev.html">Aq_excit_3_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_7_janev.html">Aq_excit_3_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_8_janev.html">Aq_excit_3_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_9_janev.html">Aq_excit_3_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_3_janev.html">Aq_excit_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_n.html">Aq_excit_n</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_n_janev.html">Aq_excit_n_janev</a>
+          
+          <a class="list-group-item" href="../proc/aq_excit_n_m.html">Aq_excit_n_m</a>
+          
+          <a class="list-group-item" href="../proc/aq_ioniz.html">Aq_ioniz</a>
+          
+          <a class="list-group-item" href="../proc/aq_ioniz_n.html">Aq_ioniz_n</a>
+          
+          <a class="list-group-item" href="../proc/aq_ioniz_n_janev.html">Aq_ioniz_n_janev</a>
+          
+          <a class="list-group-item" href="../interface/assignment%28%3D%29.html">assignment(=)</a>
+          
+          <a class="list-group-item" href="../proc/attenuate.html">attenuate</a>
+          
+          <a class="list-group-item" href="../proc/b5_cx_1_adas.html">B5_cx_1_adas</a>
+          
+          <a class="list-group-item" href="../proc/b5_cx_1_janev.html">B5_cx_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/b5_cx_2_adas.html">B5_cx_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/b5_ioniz_1_janev.html">B5_ioniz_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/balance.html">balance</a>
+          
+          <a class="list-group-item" href="../proc/balback.html">balback</a>
+          
+          <a class="list-group-item" href="../proc/bremsstrahlung.html">bremsstrahlung</a>
+          
+          <a class="list-group-item" href="../interface/bt_maxwellian.html">bt_maxwellian</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_n.html">bt_maxwellian_n</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_n_m.html">bt_maxwellian_n_m</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_q_n.html">bt_maxwellian_q_n</a>
+          
+          <a class="list-group-item" href="../proc/bt_maxwellian_q_n_m.html">bt_maxwellian_q_n_m</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_1_adas.html">C6_cx_1_adas</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_1_janev.html">C6_cx_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_2_adas.html">C6_cx_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/c6_cx_3_adas.html">C6_cx_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/c6_ioniz_1_janev.html">C6_ioniz_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/calc_perp_vectors.html">calc_perp_vectors</a>
+          
+          <a class="list-group-item" href="../proc/check_compression_availability.html">check_compression_availability</a>
+          
+          <a class="list-group-item" href="../proc/colrad.html">colrad</a>
+          
+          <a class="list-group-item" href="../proc/comabs.html">comabs</a>
+          
+          <a class="list-group-item" href="../proc/comdiv.html">Comdiv</a>
+          
+          <a class="list-group-item" href="../proc/cross_product.html">cross_product</a>
+          
+          <a class="list-group-item" href="../proc/dcx.html">dcx</a>
+          
+          <a class="list-group-item" href="../proc/e_excit.html">e_excit</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_2_janev.html">e_excit_1_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_3_janev.html">e_excit_1_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_4_janev.html">e_excit_1_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_5_janev.html">e_excit_1_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_1_janev.html">e_excit_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_2_3_janev.html">e_excit_2_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_f.html">e_excit_f</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_n.html">e_excit_n</a>
+          
+          <a class="list-group-item" href="../proc/e_excit_n_m.html">e_excit_n_m</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz.html">e_ioniz</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_1_janev.html">e_ioniz_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_2_janev.html">e_ioniz_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_3_janev.html">e_ioniz_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/e_ioniz_n.html">e_ioniz_n</a>
+          
+          <a class="list-group-item" href="../proc/eigen.html">eigen</a>
+          
+          <a class="list-group-item" href="../proc/elmhes.html">elmhes</a>
+          
+          <a class="list-group-item" href="../proc/elmtrans.html">elmtrans</a>
+          
+          <a class="list-group-item" href="../proc/fast_ion_assign.html">fast_ion_assign</a>
+          
+          <a class="list-group-item" href="../proc/ff_add.html">ff_add</a>
+          
+          <a class="list-group-item" href="../proc/ff_assign.html">ff_assign</a>
+          
+          <a class="list-group-item" href="../proc/ff_subtract.html">ff_subtract</a>
+          
+          <a class="list-group-item" href="../proc/fida_f.html">fida_f</a>
+          
+          <a class="list-group-item" href="../proc/fida_mc.html">fida_mc</a>
+          
+          <a class="list-group-item" href="../proc/fida_weights_los.html">fida_weights_los</a>
+          
+          <a class="list-group-item" href="../proc/fida_weights_mc.html">fida_weights_mc</a>
+          
+          <a class="list-group-item" href="../proc/flf_assign.html">flf_assign</a>
+          
+          <a class="list-group-item" href="../proc/fs_divide.html">fs_divide</a>
+          
+          <a class="list-group-item" href="../proc/fs_multiply.html">fs_multiply</a>
+          
+          <a class="list-group-item" href="../proc/get_beam_cx_prob.html">get_beam_cx_prob</a>
+          
+          <a class="list-group-item" href="../proc/get_distribution.html">get_distribution</a>
+          
+          <a class="list-group-item" href="../proc/get_ep_denf.html">get_ep_denf</a>
+          
+          <a class="list-group-item" href="../proc/get_fields.html">get_fields</a>
+          
+          <a class="list-group-item" href="../proc/get_indices.html">get_indices</a>
+          
+          <a class="list-group-item" href="../proc/get_nlaunch.html">get_nlaunch</a>
+          
+          <a class="list-group-item" href="../proc/get_plasma.html">get_plasma</a>
+          
+          <a class="list-group-item" href="../proc/get_position.html">get_position</a>
+          
+          <a class="list-group-item" href="../proc/get_rate_matrix.html">get_rate_matrix</a>
+          
+          <a class="list-group-item" href="../proc/grid_intersect.html">grid_intersect</a>
+          
+          <a class="list-group-item" href="../proc/gyro_correction.html">gyro_correction</a>
+          
+          <a class="list-group-item" href="../interface/h5ltmake_compressed_dataset_double_f.html">h5ltmake_compressed_dataset_double_f</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_1.html">h5ltmake_compressed_dataset_double_f_1</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_2.html">h5ltmake_compressed_dataset_double_f_2</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_3.html">h5ltmake_compressed_dataset_double_f_3</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_4.html">h5ltmake_compressed_dataset_double_f_4</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_5.html">h5ltmake_compressed_dataset_double_f_5</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_6.html">h5ltmake_compressed_dataset_double_f_6</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_double_f_7.html">h5ltmake_compressed_dataset_double_f_7</a>
+          
+          <a class="list-group-item" href="../interface/h5ltmake_compressed_dataset_int_f.html">h5ltmake_compressed_dataset_int_f</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_1.html">h5ltmake_compressed_dataset_int_f_1</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_2.html">h5ltmake_compressed_dataset_int_f_2</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_3.html">h5ltmake_compressed_dataset_int_f_3</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_4.html">h5ltmake_compressed_dataset_int_f_4</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_5.html">h5ltmake_compressed_dataset_int_f_5</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_6.html">h5ltmake_compressed_dataset_int_f_6</a>
+          
+          <a class="list-group-item" href="../proc/h5ltmake_compressed_dataset_int_f_7.html">h5ltmake_compressed_dataset_int_f_7</a>
+          
+          <a class="list-group-item" href="../proc/h5ltread_dataset_double_scalar_f.html">h5ltread_dataset_double_scalar_f</a>
+          
+          <a class="list-group-item" href="../proc/h5ltread_dataset_int_scalar_f.html">h5ltread_dataset_int_scalar_f</a>
+          
+          <a class="list-group-item" href="../proc/halo.html">halo</a>
+          
+          <a class="list-group-item" href="../proc/hit_npa_detector.html">hit_npa_detector</a>
+          
+          <a class="list-group-item" href="../proc/hqr2.html">hqr2</a>
+          
+          <a class="list-group-item" href="../proc/hqrvec.html">hqrvec</a>
+          
+          <a class="list-group-item" href="../proc/in_boundary.html">in_boundary</a>
+          
+          <a class="list-group-item" href="../proc/in_plasma.html">in_plasma</a>
+          
+          <a class="list-group-item" href="../proc/ind2sub.html">ind2sub</a>
+          
+          <a class="list-group-item" href="../interface/interpol.html">interpol</a>
+          
+          <a class="list-group-item" href="../proc/interpol1d_arr.html">interpol1D_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol1d_coeff.html">interpol1D_coeff</a>
+          
+          <a class="list-group-item" href="../proc/interpol1d_coeff_arr.html">interpol1D_coeff_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_2d_arr.html">interpol2D_2D_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_arr.html">interpol2D_arr</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_coeff.html">interpol2D_coeff</a>
+          
+          <a class="list-group-item" href="../proc/interpol2d_coeff_arr.html">interpol2D_coeff_arr</a>
+          
+          <a class="list-group-item" href="../interface/interpol_coeff.html">interpol_coeff</a>
+          
+          <a class="list-group-item" href="../proc/lff_assign.html">lff_assign</a>
+          
+          <a class="list-group-item" href="../proc/lflf_add.html">lflf_add</a>
+          
+          <a class="list-group-item" href="../proc/lflf_assign.html">lflf_assign</a>
+          
+          <a class="list-group-item" href="../proc/lflf_subtract.html">lflf_subtract</a>
+          
+          <a class="list-group-item" href="../proc/lfs_divide.html">lfs_divide</a>
+          
+          <a class="list-group-item" href="../proc/lfs_multiply.html">lfs_multiply</a>
+          
+          <a class="list-group-item" href="../proc/line_basis.html">line_basis</a>
+          
+          <a class="list-group-item" href="../proc/lplp_add.html">lplp_add</a>
+          
+          <a class="list-group-item" href="../proc/lplp_assign.html">lplp_assign</a>
+          
+          <a class="list-group-item" href="../proc/lplp_subtract.html">lplp_subtract</a>
+          
+          <a class="list-group-item" href="../proc/lpp_assign.html">lpp_assign</a>
+          
+          <a class="list-group-item" href="../proc/lps_divide.html">lps_divide</a>
+          
+          <a class="list-group-item" href="../proc/lps_multiply.html">lps_multiply</a>
+          
+          <a class="list-group-item" href="../proc/lubksb.html">lubksb</a>
+          
+          <a class="list-group-item" href="../proc/ludcmp.html">ludcmp</a>
+          
+          <a class="list-group-item" href="../proc/m_spread.html">m_spread</a>
+          
+          <a class="list-group-item" href="../proc/make_beam_grid.html">make_beam_grid</a>
+          
+          <a class="list-group-item" href="../proc/matinv.html">matinv</a>
+          
+          <a class="list-group-item" href="../proc/mc_fastion.html">mc_fastion</a>
+          
+          <a class="list-group-item" href="../proc/mc_halo.html">mc_halo</a>
+          
+          <a class="list-group-item" href="../proc/mc_nbi.html">mc_nbi</a>
+          
+          <a class="list-group-item" href="../proc/ndmc.html">ndmc</a>
+          
+          <a class="list-group-item" href="../proc/neut_rates.html">neut_rates</a>
+          
+          <a class="list-group-item" href="../proc/normp.html">normp</a>
+          
+          <a class="list-group-item" href="../proc/npa_f.html">npa_f</a>
+          
+          <a class="list-group-item" href="../proc/npa_mc.html">npa_mc</a>
+          
+          <a class="list-group-item" href="../proc/npa_part_assign.html">npa_part_assign</a>
+          
+          <a class="list-group-item" href="../proc/npa_weights.html">npa_weights</a>
+          
+          <a class="list-group-item" href="../interface/operator%28%2A%29.html">operator(*)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28%2B%29.html">operator(+)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28-%29.html">operator(-)</a>
+          
+          <a class="list-group-item" href="../interface/operator%28SLASH%29.html">operator(/)</a>
+          
+          <a class="list-group-item" href="../proc/outerprod.html">outerprod</a>
+          
+          <a class="list-group-item" href="../proc/p_cx.html">p_cx</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1.html">p_cx_1</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_1_adas.html">p_cx_1_1_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_2_adas.html">p_cx_1_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_3_adas.html">p_cx_1_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_4_adas.html">p_cx_1_4_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_1_janev.html">p_cx_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2.html">p_cx_2</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2_2_adas.html">p_cx_2_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2_3_adas.html">p_cx_2_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_2_janev.html">p_cx_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3.html">p_cx_3</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_2_adas.html">p_cx_3_2_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_3_adas.html">p_cx_3_3_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_4_adas.html">p_cx_3_4_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_5_adas.html">p_cx_3_5_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_6inf_adas.html">p_cx_3_6inf_adas</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_3_janev.html">p_cx_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_4_janev.html">p_cx_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_janev.html">p_cx_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_n.html">p_cx_n</a>
+          
+          <a class="list-group-item" href="../proc/p_cx_n_m.html">p_cx_n_m</a>
+          
+          <a class="list-group-item" href="../proc/p_excit.html">p_excit</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_2_janev.html">p_excit_1_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_3_janev.html">p_excit_1_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_4_janev.html">p_excit_1_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_5_janev.html">p_excit_1_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_6_janev.html">p_excit_1_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_1_janev.html">p_excit_1_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_10_janev.html">p_excit_2_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_3_janev.html">p_excit_2_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_4_janev.html">p_excit_2_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_5_janev.html">p_excit_2_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_6_janev.html">p_excit_2_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_7_janev.html">p_excit_2_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_8_janev.html">p_excit_2_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_9_janev.html">p_excit_2_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_2_janev.html">p_excit_2_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_10_janev.html">p_excit_3_10_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_4_janev.html">p_excit_3_4_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_5_janev.html">p_excit_3_5_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_6_janev.html">p_excit_3_6_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_7_janev.html">p_excit_3_7_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_8_janev.html">p_excit_3_8_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_9_janev.html">p_excit_3_9_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_3_janev.html">p_excit_3_janev</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_n.html">p_excit_n</a>
+          
+          <a class="list-group-item" href="../proc/p_excit_n_m.html">p_excit_n_m</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz.html">p_ioniz</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_1_omullane.html">p_ioniz_1_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_2_omullane.html">p_ioniz_2_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_3_omullane.html">p_ioniz_3_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_4_omullane.html">p_ioniz_4_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_5_omullane.html">p_ioniz_5_omullane</a>
+          
+          <a class="list-group-item" href="../proc/p_ioniz_n.html">p_ioniz_n</a>
+          
+          <a class="list-group-item" href="../proc/pitch_to_vec.html">pitch_to_vec</a>
+          
+          <a class="list-group-item" href="../proc/plane_basis.html">plane_basis</a>
+          
+          <a class="list-group-item" href="../proc/plane_intercept.html">plane_intercept</a>
+          
+          <a class="list-group-item" href="../proc/plp_assign.html">plp_assign</a>
+          
+          <a class="list-group-item" href="../proc/pp_add.html">pp_add</a>
+          
+          <a class="list-group-item" href="../proc/pp_assign.html">pp_assign</a>
+          
+          <a class="list-group-item" href="../proc/pp_subtract.html">pp_subtract</a>
+          
+          <a class="list-group-item" href="../proc/print_banner.html">print_banner</a>
+          
+          <a class="list-group-item" href="../proc/ps_divide.html">ps_divide</a>
+          
+          <a class="list-group-item" href="../proc/ps_multiply.html">ps_multiply</a>
+          
+          <a class="list-group-item" href="../interface/randind.html">randind</a>
+          
+          <a class="list-group-item" href="../proc/randind_n.html">randind_n</a>
+          
+          <a class="list-group-item" href="../proc/randind_w_1.html">randind_w_1</a>
+          
+          <a class="list-group-item" href="../proc/randind_w_2.html">randind_w_2</a>
+          
+          <a class="list-group-item" href="../proc/randn.html">randn</a>
+          
+          <a class="list-group-item" href="../proc/randu.html">randu</a>
+          
+          <a class="list-group-item" href="../proc/read_beam.html">read_beam</a>
+          
+          <a class="list-group-item" href="../proc/read_chords.html">read_chords</a>
+          
+          <a class="list-group-item" href="../proc/read_cross.html">read_cross</a>
+          
+          <a class="list-group-item" href="../proc/read_distribution.html">read_distribution</a>
+          
+          <a class="list-group-item" href="../proc/read_equilibrium.html">read_equilibrium</a>
+          
+          <a class="list-group-item" href="../proc/read_f.html">read_f</a>
+          
+          <a class="list-group-item" href="../proc/read_inputs.html">read_inputs</a>
+          
+          <a class="list-group-item" href="../proc/read_mc.html">read_mc</a>
+          
+          <a class="list-group-item" href="../proc/read_neutrals.html">read_neutrals</a>
+          
+          <a class="list-group-item" href="../proc/read_npa.html">read_npa</a>
+          
+          <a class="list-group-item" href="../proc/read_rates.html">read_rates</a>
+          
+          <a class="list-group-item" href="../proc/read_tables.html">read_tables</a>
+          
+          <a class="list-group-item" href="../proc/rng_init.html">rng_init</a>
+          
+          <a class="list-group-item" href="../proc/rng_normal.html">rng_normal</a>
+          
+          <a class="list-group-item" href="../proc/rng_uniform.html">rng_uniform</a>
+          
+          <a class="list-group-item" href="../proc/rswap.html">RSWAP</a>
+          
+          <a class="list-group-item" href="../proc/sf_multiply.html">sf_multiply</a>
+          
+          <a class="list-group-item" href="../proc/simpsons_rule.html">simpsons_rule</a>
+          
+          <a class="list-group-item" href="../proc/slf_multiply.html">slf_multiply</a>
+          
+          <a class="list-group-item" href="../proc/slp_multiply.html">slp_multiply</a>
+          
+          <a class="list-group-item" href="../proc/sp_multiply.html">sp_multiply</a>
+          
+          <a class="list-group-item" href="../proc/spectrum.html">spectrum</a>
+          
+          <a class="list-group-item" href="../proc/store_bes_photons.html">store_bes_photons</a>
+          
+          <a class="list-group-item" href="../proc/store_births.html">store_births</a>
+          
+          <a class="list-group-item" href="../proc/store_fida_photons.html">store_fida_photons</a>
+          
+          <a class="list-group-item" href="../proc/store_fw_photons.html">store_fw_photons</a>
+          
+          <a class="list-group-item" href="../proc/store_fw_photons_at_chan.html">store_fw_photons_at_chan</a>
+          
+          <a class="list-group-item" href="../proc/store_neutrals.html">store_neutrals</a>
+          
+          <a class="list-group-item" href="../proc/store_npa.html">store_npa</a>
+          
+          <a class="list-group-item" href="../proc/swap.html">swap</a>
+          
+          <a class="list-group-item" href="../proc/tb_zyx.html">tb_zyx</a>
+          
+          <a class="list-group-item" href="../proc/track.html">track</a>
+          
+          <a class="list-group-item" href="../proc/uvw_to_xyz.html">uvw_to_xyz</a>
+          
+          <a class="list-group-item" href="../proc/write_bb_h_aq.html">write_bb_H_Aq</a>
+          
+          <a class="list-group-item" href="../proc/write_bb_h_e.html">write_bb_H_e</a>
+          
+          <a class="list-group-item" href="../proc/write_bb_h_h.html">write_bb_H_H</a>
+          
+          <a class="list-group-item" href="../proc/write_beam_grid.html">write_beam_grid</a>
+          
+          <a class="list-group-item" href="../proc/write_birth_profile.html">write_birth_profile</a>
+          
+          <a class="list-group-item" href="../proc/write_bt_h_aq.html">write_bt_H_Aq</a>
+          
+          <a class="list-group-item" href="../proc/write_bt_h_e.html">write_bt_H_e</a>
+          
+          <a class="list-group-item" href="../proc/write_bt_h_h.html">write_bt_H_H</a>
+          
+          <a class="list-group-item" href="../proc/write_dcx.html">write_dcx</a>
+          
+          <a class="list-group-item" href="../proc/write_einstein.html">write_einstein</a>
+          
+          <a class="list-group-item" href="../proc/write_fida_weights.html">write_fida_weights</a>
+          
+          <a class="list-group-item" href="../proc/write_neutrals.html">write_neutrals</a>
+          
+          <a class="list-group-item" href="../proc/write_npa.html">write_npa</a>
+          
+          <a class="list-group-item" href="../proc/write_npa_weights.html">write_npa_weights</a>
+          
+          <a class="list-group-item" href="../proc/write_spectra.html">write_spectra</a>
+          
+          <a class="list-group-item" href="../proc/xyz_to_uvw.html">xyz_to_uvw</a>
+          
+        </div>
+    </div>
+  </div>
+  
+</div>
+
+    </div>
+    
+    <div class="col-lg-9" id='text'>
+    <h2>
+public function p_excit(eb, n_max, m_max) result(sigma)
+    
+    
+    
+</h2>
+    
+  
+
+
+
+    <h3>Arguments</h3>
+    
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eb%7E39"></span>real(kind=Float64),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>eb</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n_max%7E8"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>n_max</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m_max%7E16"></span>integer,</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>m_max</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    
+    
+    
+    
+    
+    
+    
+	 <h3>Return Value <small><span class="anchor" id="variable-sigma%7E55"></span>real(kind=Float64),
+  dimension(m_max,n_max)</small></h3>
+    
+    
+    
+    
+     <h3>Calls</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: proc~~p_excit~~CallsGraph Pages: 1 -->
+<svg id="procp_excitCallsGraph" width="564pt" height="811pt"
+ viewBox="0.00 0.00 564.00 810.73" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~p_excit~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 806.734)">
+<title>proc~~p_excit~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-806.734 560,-806.734 560,4 -4,4"/>
+<!-- proc~p_excit -->
+<g id="proc~~p_excit~~CallsGraph_node1" class="node"><title>proc~p_excit</title>
+<polygon fill="none" stroke="black" points="54,-356 0,-356 0,-332 54,-332 54,-356"/>
+<text text-anchor="middle" x="27" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50">p_excit</text>
+</g>
+<!-- proc~p_excit_n -->
+<g id="proc~~p_excit~~CallsGraph_node2" class="node"><title>proc~p_excit_n</title>
+<g id="a_proc~~p_excit~~CallsGraph_node2"><a xlink:href="../proc/p_excit_n.html" xlink:title="p_excit_n">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="148,-356 90,-356 90,-332 148,-332 148,-356"/>
+<text text-anchor="middle" x="119" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_n</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit&#45;&gt;proc~p_excit_n -->
+<g id="proc~~p_excit~~CallsGraph_edge33" class="edge"><title>proc~p_excit&#45;&gt;proc~p_excit_n</title>
+<path fill="none" stroke="black" d="M54.0317,-344C62.0039,-344 70.9483,-344 79.5645,-344"/>
+<polygon fill="black" stroke="black" points="79.8244,-347.5 89.8243,-344 79.8243,-340.5 79.8244,-347.5"/>
+</g>
+<!-- proc~p_excit_2_janev -->
+<g id="proc~~p_excit~~CallsGraph_node3" class="node"><title>proc~p_excit_2_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node3"><a xlink:href="../proc/p_excit_2_janev.html" xlink:title="p_excit_2_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="274,-650 184,-650 184,-626 274,-626 274,-650"/>
+<text text-anchor="middle" x="229" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_n&#45;&gt;proc~p_excit_2_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge30" class="edge"><title>proc~p_excit_n&#45;&gt;proc~p_excit_2_janev</title>
+<path fill="none" stroke="black" d="M124.503,-356.259C141.039,-401.274 198.56,-557.857 219.927,-616.023"/>
+<polygon fill="black" stroke="black" points="216.744,-617.509 223.478,-625.689 223.315,-615.096 216.744,-617.509"/>
+</g>
+<!-- proc~p_excit_3_janev -->
+<g id="proc~~p_excit~~CallsGraph_node4" class="node"><title>proc~p_excit_3_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node4"><a xlink:href="../proc/p_excit_3_janev.html" xlink:title="p_excit_3_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="274,-356 184,-356 184,-332 274,-332 274,-356"/>
+<text text-anchor="middle" x="229" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_n&#45;&gt;proc~p_excit_3_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge31" class="edge"><title>proc~p_excit_n&#45;&gt;proc~p_excit_3_janev</title>
+<path fill="none" stroke="black" d="M148.094,-344C155.91,-344 164.676,-344 173.46,-344"/>
+<polygon fill="black" stroke="black" points="173.725,-347.5 183.725,-344 173.725,-340.5 173.725,-347.5"/>
+</g>
+<!-- proc~p_excit_1_janev -->
+<g id="proc~~p_excit~~CallsGraph_node5" class="node"><title>proc~p_excit_1_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node5"><a xlink:href="../proc/p_excit_1_janev.html" xlink:title="p_excit_1_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="274,-129 184,-129 184,-105 274,-105 274,-129"/>
+<text text-anchor="middle" x="229" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_1_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_n&#45;&gt;proc~p_excit_1_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge32" class="edge"><title>proc~p_excit_n&#45;&gt;proc~p_excit_1_janev</title>
+<path fill="none" stroke="black" d="M125.807,-331.795C143.277,-295.075 195.518,-185.272 217.775,-138.491"/>
+<polygon fill="black" stroke="black" points="221.029,-139.799 222.165,-129.265 214.708,-136.791 221.029,-139.799"/>
+</g>
+<!-- proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_node6" class="node"><title>proc~p_excit_2_5_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node6"><a xlink:href="../proc/p_excit_2_5_janev.html" xlink:title="p_excit_2_5_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="556,-671 454,-671 454,-647 556,-647 556,-671"/>
+<text text-anchor="middle" x="505" y="-656.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_5_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge6" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_5_janev</title>
+<path fill="none" stroke="black" d="M232.347,-650.419C238.701,-680.09 259.295,-754.867 310,-785 351.263,-809.522 375.557,-807.418 418,-785 459.688,-762.981 484.983,-710.66 496.526,-680.826"/>
+<polygon fill="black" stroke="black" points="499.863,-681.89 500.039,-671.297 493.296,-679.469 499.863,-681.89"/>
+</g>
+<!-- proc~p_excit_2_8_janev -->
+<g id="proc~~p_excit~~CallsGraph_node7" class="node"><title>proc~p_excit_2_8_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node7"><a xlink:href="../proc/p_excit_2_8_janev.html" xlink:title="p_excit_2_8_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-776 313,-776 313,-752 415,-752 415,-776"/>
+<text text-anchor="middle" x="364" y="-761.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_8_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_8_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge7" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_8_janev</title>
+<path fill="none" stroke="black" d="M236.29,-650.095C248.039,-671.601 275.296,-716.701 310,-743 311.859,-744.409 313.824,-745.736 315.861,-746.984"/>
+<polygon fill="black" stroke="black" points="314.674,-750.319 325.139,-751.968 317.986,-744.153 314.674,-750.319"/>
+</g>
+<!-- proc~p_excit_2_3_janev -->
+<g id="proc~~p_excit~~CallsGraph_node8" class="node"><title>proc~p_excit_2_3_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node8"><a xlink:href="../proc/p_excit_2_3_janev.html" xlink:title="p_excit_2_3_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-734 313,-734 313,-710 415,-710 415,-734"/>
+<text text-anchor="middle" x="364" y="-719.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_3_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_3_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge8" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_3_janev</title>
+<path fill="none" stroke="black" d="M243.006,-650.21C258.163,-663.952 284.411,-686.275 310,-701 312.874,-702.654 315.903,-704.234 318.998,-705.732"/>
+<polygon fill="black" stroke="black" points="317.834,-709.047 328.389,-709.97 320.714,-702.667 317.834,-709.047"/>
+</g>
+<!-- proc~p_excit_2_7_janev -->
+<g id="proc~~p_excit~~CallsGraph_node9" class="node"><title>proc~p_excit_2_7_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node9"><a xlink:href="../proc/p_excit_2_7_janev.html" xlink:title="p_excit_2_7_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-692 313,-692 313,-668 415,-668 415,-692"/>
+<text text-anchor="middle" x="364" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_7_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_7_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge9" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_7_janev</title>
+<path fill="none" stroke="black" d="M268.112,-650.036C282.721,-654.649 299.579,-659.972 314.997,-664.841"/>
+<polygon fill="black" stroke="black" points="314.292,-668.289 324.882,-667.963 316.4,-661.614 314.292,-668.289"/>
+</g>
+<!-- proc~p_excit_2_10_janev -->
+<g id="proc~~p_excit~~CallsGraph_node10" class="node"><title>proc~p_excit_2_10_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node10"><a xlink:href="../proc/p_excit_2_10_janev.html" xlink:title="p_excit_2_10_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="418,-650 310,-650 310,-626 418,-626 418,-650"/>
+<text text-anchor="middle" x="364" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_10_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_10_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge10" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_10_janev</title>
+<path fill="none" stroke="black" d="M274.287,-638C282.434,-638 291.084,-638 299.663,-638"/>
+<polygon fill="black" stroke="black" points="299.667,-641.5 309.667,-638 299.667,-634.5 299.667,-641.5"/>
+</g>
+<!-- proc~p_excit_2_4_janev -->
+<g id="proc~~p_excit~~CallsGraph_node11" class="node"><title>proc~p_excit_2_4_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node11"><a xlink:href="../proc/p_excit_2_4_janev.html" xlink:title="p_excit_2_4_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-608 313,-608 313,-584 415,-584 415,-608"/>
+<text text-anchor="middle" x="364" y="-593.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_4_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_4_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge11" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_4_janev</title>
+<path fill="none" stroke="black" d="M268.112,-625.964C282.721,-621.351 299.579,-616.028 314.997,-611.159"/>
+<polygon fill="black" stroke="black" points="316.4,-614.386 324.882,-608.037 314.292,-607.711 316.4,-614.386"/>
+</g>
+<!-- proc~p_excit_2_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_node12" class="node"><title>proc~p_excit_2_6_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node12"><a xlink:href="../proc/p_excit_2_6_janev.html" xlink:title="p_excit_2_6_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-566 313,-566 313,-542 415,-542 415,-566"/>
+<text text-anchor="middle" x="364" y="-551.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_6_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge12" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_6_janev</title>
+<path fill="none" stroke="black" d="M243.006,-625.79C258.163,-612.048 284.411,-589.725 310,-575 312.874,-573.346 315.903,-571.766 318.998,-570.268"/>
+<polygon fill="black" stroke="black" points="320.714,-573.333 328.389,-566.03 317.834,-566.953 320.714,-573.333"/>
+</g>
+<!-- proc~p_excit_2_9_janev -->
+<g id="proc~~p_excit~~CallsGraph_node13" class="node"><title>proc~p_excit_2_9_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node13"><a xlink:href="../proc/p_excit_2_9_janev.html" xlink:title="p_excit_2_9_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-524 313,-524 313,-500 415,-500 415,-524"/>
+<text text-anchor="middle" x="364" y="-509.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_2_9_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_9_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge13" class="edge"><title>proc~p_excit_2_janev&#45;&gt;proc~p_excit_2_9_janev</title>
+<path fill="none" stroke="black" d="M236.29,-625.905C248.039,-604.399 275.296,-559.299 310,-533 311.859,-531.591 313.824,-530.264 315.861,-529.016"/>
+<polygon fill="black" stroke="black" points="317.986,-531.847 325.139,-524.032 314.674,-525.681 317.986,-531.847"/>
+</g>
+<!-- proc~p_excit_3_10_janev -->
+<g id="proc~~p_excit~~CallsGraph_node14" class="node"><title>proc~p_excit_3_10_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node14"><a xlink:href="../proc/p_excit_3_10_janev.html" xlink:title="p_excit_3_10_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="418,-482 310,-482 310,-458 418,-458 418,-482"/>
+<text text-anchor="middle" x="364" y="-467.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_10_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_10_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge18" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_10_janev</title>
+<path fill="none" stroke="black" d="M236.29,-356.095C248.039,-377.601 275.296,-422.701 310,-449 311.859,-450.409 313.824,-451.736 315.861,-452.984"/>
+<polygon fill="black" stroke="black" points="314.674,-456.319 325.139,-457.968 317.986,-450.153 314.674,-456.319"/>
+</g>
+<!-- proc~p_excit_3_4_janev -->
+<g id="proc~~p_excit~~CallsGraph_node15" class="node"><title>proc~p_excit_3_4_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node15"><a xlink:href="../proc/p_excit_3_4_janev.html" xlink:title="p_excit_3_4_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-440 313,-440 313,-416 415,-416 415,-440"/>
+<text text-anchor="middle" x="364" y="-425.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_4_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_4_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge19" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_4_janev</title>
+<path fill="none" stroke="black" d="M243.006,-356.21C258.163,-369.952 284.411,-392.275 310,-407 312.874,-408.654 315.903,-410.234 318.998,-411.732"/>
+<polygon fill="black" stroke="black" points="317.834,-415.047 328.389,-415.97 320.714,-408.667 317.834,-415.047"/>
+</g>
+<!-- proc~p_excit_3_9_janev -->
+<g id="proc~~p_excit~~CallsGraph_node16" class="node"><title>proc~p_excit_3_9_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node16"><a xlink:href="../proc/p_excit_3_9_janev.html" xlink:title="p_excit_3_9_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-398 313,-398 313,-374 415,-374 415,-398"/>
+<text text-anchor="middle" x="364" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_9_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_9_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge20" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_9_janev</title>
+<path fill="none" stroke="black" d="M268.112,-356.036C282.721,-360.649 299.579,-365.972 314.997,-370.841"/>
+<polygon fill="black" stroke="black" points="314.292,-374.289 324.882,-373.963 316.4,-367.614 314.292,-374.289"/>
+</g>
+<!-- proc~p_excit_3_7_janev -->
+<g id="proc~~p_excit~~CallsGraph_node17" class="node"><title>proc~p_excit_3_7_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node17"><a xlink:href="../proc/p_excit_3_7_janev.html" xlink:title="p_excit_3_7_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-356 313,-356 313,-332 415,-332 415,-356"/>
+<text text-anchor="middle" x="364" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_7_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_7_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge21" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_7_janev</title>
+<path fill="none" stroke="black" d="M274.287,-344C283.388,-344 293.116,-344 302.673,-344"/>
+<polygon fill="black" stroke="black" points="302.938,-347.5 312.938,-344 302.937,-340.5 302.938,-347.5"/>
+</g>
+<!-- proc~p_excit_3_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_node18" class="node"><title>proc~p_excit_3_6_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node18"><a xlink:href="../proc/p_excit_3_6_janev.html" xlink:title="p_excit_3_6_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="556,-356 454,-356 454,-332 556,-332 556,-356"/>
+<text text-anchor="middle" x="505" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_6_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge22" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_6_janev</title>
+<path fill="none" stroke="black" d="M267.856,-331.935C281.049,-328.301 296.044,-324.801 310,-323 357.605,-316.856 370.344,-317.266 418,-323 429.566,-324.392 441.822,-326.8 453.346,-329.501"/>
+<polygon fill="black" stroke="black" points="452.702,-332.947 463.248,-331.932 454.371,-326.149 452.702,-332.947"/>
+</g>
+<!-- proc~p_excit_3_8_janev -->
+<g id="proc~~p_excit~~CallsGraph_node19" class="node"><title>proc~p_excit_3_8_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node19"><a xlink:href="../proc/p_excit_3_8_janev.html" xlink:title="p_excit_3_8_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-276 313,-276 313,-252 415,-252 415,-276"/>
+<text text-anchor="middle" x="364" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_8_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_8_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge23" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_8_janev</title>
+<path fill="none" stroke="black" d="M246.425,-331.934C262.303,-320.507 287.234,-303.184 310,-290 315.529,-286.798 321.509,-283.614 327.391,-280.628"/>
+<polygon fill="black" stroke="black" points="329.07,-283.702 336.477,-276.126 325.962,-277.43 329.07,-283.702"/>
+</g>
+<!-- proc~p_excit_3_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_node20" class="node"><title>proc~p_excit_3_5_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node20"><a xlink:href="../proc/p_excit_3_5_janev.html" xlink:title="p_excit_3_5_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-234 313,-234 313,-210 415,-210 415,-234"/>
+<text text-anchor="middle" x="364" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_3_5_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge24" class="edge"><title>proc~p_excit_3_janev&#45;&gt;proc~p_excit_3_5_janev</title>
+<path fill="none" stroke="black" d="M236.79,-331.716C248.924,-310.795 276.246,-268.083 310,-243 311.872,-241.609 313.848,-240.296 315.894,-239.059"/>
+<polygon fill="black" stroke="black" points="318.013,-241.896 325.198,-234.11 314.725,-235.716 318.013,-241.896"/>
+</g>
+<!-- proc~p_excit_1_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_node21" class="node"><title>proc~p_excit_1_5_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node21"><a xlink:href="../proc/p_excit_1_5_janev.html" xlink:title="p_excit_1_5_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-192 313,-192 313,-168 415,-168 415,-192"/>
+<text text-anchor="middle" x="364" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_1_5_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge25" class="edge"><title>proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_5_janev</title>
+<path fill="none" stroke="black" d="M251.42,-129.04C267.356,-137.801 289.756,-149.707 310,-159 313.795,-160.742 317.778,-162.48 321.785,-164.168"/>
+<polygon fill="black" stroke="black" points="320.519,-167.432 331.099,-167.995 323.179,-160.957 320.519,-167.432"/>
+</g>
+<!-- proc~p_excit_1_4_janev -->
+<g id="proc~~p_excit~~CallsGraph_node22" class="node"><title>proc~p_excit_1_4_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node22"><a xlink:href="../proc/p_excit_1_4_janev.html" xlink:title="p_excit_1_4_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-150 313,-150 313,-126 415,-126 415,-150"/>
+<text text-anchor="middle" x="364" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_1_4_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_4_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge26" class="edge"><title>proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_4_janev</title>
+<path fill="none" stroke="black" d="M274.287,-123.993C283.485,-125.445 293.323,-126.998 302.978,-128.523"/>
+<polygon fill="black" stroke="black" points="302.514,-131.993 312.938,-130.095 303.606,-125.079 302.514,-131.993"/>
+</g>
+<!-- proc~p_excit_1_2_janev -->
+<g id="proc~~p_excit~~CallsGraph_node23" class="node"><title>proc~p_excit_1_2_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node23"><a xlink:href="../proc/p_excit_1_2_janev.html" xlink:title="p_excit_1_2_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-108 313,-108 313,-84 415,-84 415,-108"/>
+<text text-anchor="middle" x="364" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_1_2_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_2_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge27" class="edge"><title>proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_2_janev</title>
+<path fill="none" stroke="black" d="M274.287,-110.007C283.485,-108.555 293.323,-107.002 302.978,-105.477"/>
+<polygon fill="black" stroke="black" points="303.606,-108.921 312.938,-103.905 302.514,-102.007 303.606,-108.921"/>
+</g>
+<!-- proc~p_excit_1_3_janev -->
+<g id="proc~~p_excit~~CallsGraph_node24" class="node"><title>proc~p_excit_1_3_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node24"><a xlink:href="../proc/p_excit_1_3_janev.html" xlink:title="p_excit_1_3_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-66 313,-66 313,-42 415,-42 415,-66"/>
+<text text-anchor="middle" x="364" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_1_3_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_3_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge28" class="edge"><title>proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_3_janev</title>
+<path fill="none" stroke="black" d="M251.42,-104.96C267.356,-96.1989 289.756,-84.2928 310,-75 313.795,-73.2581 317.778,-71.5199 321.785,-69.8317"/>
+<polygon fill="black" stroke="black" points="323.179,-73.0427 331.099,-66.0046 320.519,-66.568 323.179,-73.0427"/>
+</g>
+<!-- proc~p_excit_1_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_node25" class="node"><title>proc~p_excit_1_6_janev</title>
+<g id="a_proc~~p_excit~~CallsGraph_node25"><a xlink:href="../proc/p_excit_1_6_janev.html" xlink:title="p_excit_1_6_janev">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="415,-24 313,-24 313,-0 415,-0 415,-24"/>
+<text text-anchor="middle" x="364" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">p_excit_1_6_janev</text>
+</a>
+</g>
+</g>
+<!-- proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge29" class="edge"><title>proc~p_excit_1_janev&#45;&gt;proc~p_excit_1_6_janev</title>
+<path fill="none" stroke="black" d="M238.795,-104.845C252.303,-86.9362 279.783,-53.3865 310,-33 312.268,-31.47 314.664,-30.0256 317.134,-28.6661"/>
+<polygon fill="black" stroke="black" points="318.904,-31.6949 326.305,-24.1138 315.792,-25.4247 318.904,-31.6949"/>
+</g>
+<!-- proc~p_excit_2_8_janev&#45;&gt;proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge1" class="edge"><title>proc~p_excit_2_8_janev&#45;&gt;proc~p_excit_2_5_janev</title>
+<path fill="none" stroke="black" d="M401.031,-751.975C406.903,-749.388 412.769,-746.393 418,-743 445.483,-725.172 471.595,-697.628 487.685,-678.984"/>
+<polygon fill="black" stroke="black" points="490.558,-681.007 494.341,-671.111 485.212,-676.488 490.558,-681.007"/>
+</g>
+<!-- proc~p_excit_2_7_janev&#45;&gt;proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge2" class="edge"><title>proc~p_excit_2_7_janev&#45;&gt;proc~p_excit_2_5_janev</title>
+<path fill="none" stroke="black" d="M415.182,-672.419C424.532,-671.006 434.389,-669.517 443.998,-668.065"/>
+<polygon fill="black" stroke="black" points="444.527,-671.525 453.891,-666.57 443.481,-664.604 444.527,-671.525"/>
+</g>
+<!-- proc~p_excit_2_10_janev&#45;&gt;proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge3" class="edge"><title>proc~p_excit_2_10_janev&#45;&gt;proc~p_excit_2_5_janev</title>
+<path fill="none" stroke="black" d="M418.343,-646.059C426.617,-647.309 435.213,-648.608 443.628,-649.879"/>
+<polygon fill="black" stroke="black" points="443.358,-653.378 453.769,-651.411 444.404,-646.456 443.358,-653.378"/>
+</g>
+<!-- proc~p_excit_2_6_janev&#45;&gt;proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge4" class="edge"><title>proc~p_excit_2_6_janev&#45;&gt;proc~p_excit_2_5_janev</title>
+<path fill="none" stroke="black" d="M401.031,-566.025C406.903,-568.612 412.769,-571.607 418,-575 445.483,-592.828 471.595,-620.372 487.685,-639.016"/>
+<polygon fill="black" stroke="black" points="485.212,-641.512 494.341,-646.889 490.558,-636.993 485.212,-641.512"/>
+</g>
+<!-- proc~p_excit_2_9_janev&#45;&gt;proc~p_excit_2_5_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge5" class="edge"><title>proc~p_excit_2_9_janev&#45;&gt;proc~p_excit_2_5_janev</title>
+<path fill="none" stroke="black" d="M403.575,-524.087C408.7,-526.586 413.671,-529.538 418,-533 454.106,-561.875 480.959,-609.957 494.39,-637.626"/>
+<polygon fill="black" stroke="black" points="491.295,-639.269 498.723,-646.823 497.627,-636.285 491.295,-639.269"/>
+</g>
+<!-- proc~p_excit_3_10_janev&#45;&gt;proc~p_excit_3_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge14" class="edge"><title>proc~p_excit_3_10_janev&#45;&gt;proc~p_excit_3_6_janev</title>
+<path fill="none" stroke="black" d="M402.475,-457.951C407.928,-455.417 413.285,-452.445 418,-449 449.774,-425.789 476.689,-388.181 491.564,-364.835"/>
+<polygon fill="black" stroke="black" points="494.703,-366.414 497.008,-356.073 488.757,-362.72 494.703,-366.414"/>
+</g>
+<!-- proc~p_excit_3_9_janev&#45;&gt;proc~p_excit_3_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge15" class="edge"><title>proc~p_excit_3_9_janev&#45;&gt;proc~p_excit_3_6_janev</title>
+<path fill="none" stroke="black" d="M404.832,-373.964C420.245,-369.307 438.054,-363.926 454.291,-359.02"/>
+<polygon fill="black" stroke="black" points="455.602,-362.28 464.162,-356.037 453.577,-355.579 455.602,-362.28"/>
+</g>
+<!-- proc~p_excit_3_7_janev&#45;&gt;proc~p_excit_3_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge16" class="edge"><title>proc~p_excit_3_7_janev&#45;&gt;proc~p_excit_3_6_janev</title>
+<path fill="none" stroke="black" d="M415.182,-344C424.434,-344 434.181,-344 443.695,-344"/>
+<polygon fill="black" stroke="black" points="443.892,-347.5 453.891,-344 443.891,-340.5 443.892,-347.5"/>
+</g>
+<!-- proc~p_excit_3_8_janev&#45;&gt;proc~p_excit_3_6_janev -->
+<g id="proc~~p_excit~~CallsGraph_edge17" class="edge"><title>proc~p_excit_3_8_janev&#45;&gt;proc~p_excit_3_6_janev</title>
+<path fill="none" stroke="black" d="M390.889,-276.03C399.603,-280.256 409.316,-285.161 418,-290 438.271,-301.295 460.432,-315.251 477.18,-326.145"/>
+<polygon fill="black" stroke="black" points="475.599,-329.294 485.882,-331.846 479.435,-323.438 475.599,-329.294"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+Nodes of different colours represent the following:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="26pt"
+ viewBox="0.00 0.00 641.00 25.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.811906 0.811906) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 785.5,-28 785.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Type -->
+<g id="node3" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="212,-24 158,-24 158,-0 212,-0 212,-24"/>
+<text text-anchor="middle" x="185" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- Subroutine -->
+<g id="node4" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="294,-24 230,-24 230,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="262" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node5" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node6" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="439.5,-24 384.5,-24 384.5,-0 439.5,-0 439.5,-24"/>
+<text text-anchor="middle" x="412" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node7" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="594,-24 458,-24 458,-0 594,-0 594,-24"/>
+<text text-anchor="middle" x="526" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node8" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="666,-24 612,-24 612,-0 666,-0 666,-24"/>
+<text text-anchor="middle" x="639" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node9" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="781.5,-24 684.5,-24 684.5,-0 781.5,-0 781.5,-24"/>
+<text text-anchor="middle" x="733" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<h5>Module Graph</h5>
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module using it.</p>
+<h5>Type Graph</h5>
+<p>Solid arrows point from one derived type to another which extends
+(inherits from) it. Dashed arrows point from a derived type to another
+type containing it as a components, with a label listing the name(s) of
+said component(s).</p>
+<h5>Call Graph</h5>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+     
+     <h3>Called By</h3>
+     
+                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: proc~~p_excit~~CalledByGraph Pages: 1 -->
+<svg id="procp_excitCalledByGraph" width="304pt" height="32pt"
+ viewBox="0.00 0.00 304.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~p_excit~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~p_excit~~CalledByGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 300,-28 300,4 -4,4"/>
+<!-- proc~p_excit -->
+<g id="proc~~p_excit~~CalledByGraph_node1" class="node"><title>proc~p_excit</title>
+<polygon fill="none" stroke="black" points="296,-24 242,-24 242,-0 296,-0 296,-24"/>
+<text text-anchor="middle" x="269" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">p_excit</text>
+</g>
+<!-- proc~write_bb_h_h -->
+<g id="proc~~p_excit~~CalledByGraph_node2" class="node"><title>proc~write_bb_h_h</title>
+<g id="a_proc~~p_excit~~CalledByGraph_node2"><a xlink:href="../proc/write_bb_h_h.html" xlink:title="write_bb_H_H">
+<polygon fill="#d9534f" stroke="#d9534f" points="206,-24 126,-24 126,-0 206,-0 206,-24"/>
+<text text-anchor="middle" x="166" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_bb_H_H</text>
+</a>
+</g>
+</g>
+<!-- proc~write_bb_h_h&#45;&gt;proc~p_excit -->
+<g id="proc~~p_excit~~CalledByGraph_edge2" class="edge"><title>proc~write_bb_h_h&#45;&gt;proc~p_excit</title>
+<path fill="none" stroke="black" d="M206.049,-12C214.48,-12 223.36,-12 231.681,-12"/>
+<polygon fill="black" stroke="black" points="231.846,-15.5001 241.846,-12 231.846,-8.5001 231.846,-15.5001"/>
+</g>
+<!-- program~generate_tables -->
+<g id="proc~~p_excit~~CalledByGraph_node3" class="node"><title>program~generate_tables</title>
+<g id="a_proc~~p_excit~~CalledByGraph_node3"><a xlink:href="../program/generate_tables.html" xlink:title="generate_tables">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="90,-24 0,-24 0,-0 90,-0 90,-24"/>
+<text text-anchor="middle" x="45" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">generate_tables</text>
+</a>
+</g>
+</g>
+<!-- program~generate_tables&#45;&gt;proc~write_bb_h_h -->
+<g id="proc~~p_excit~~CalledByGraph_edge1" class="edge"><title>program~generate_tables&#45;&gt;proc~write_bb_h_h</title>
+<path fill="none" stroke="black" d="M90.3112,-12C98.5796,-12 107.267,-12 115.676,-12"/>
+<polygon fill="black" stroke="black" points="115.746,-15.5001 125.746,-12 115.746,-8.5001 115.746,-15.5001"/>
+</g>
+</g>
+</svg>
+</div>
+                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+Nodes of different colours represent the following:
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="26pt"
+ viewBox="0.00 0.00 641.00 25.98" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.811906 0.811906) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28 785.5,-28 785.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node"><title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,-0 54,-0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node"><title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,-0 139.5,-0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Type -->
+<g id="node3" class="node"><title>Type</title>
+<polygon fill="#5cb85c" stroke="#5cb85c" points="212,-24 158,-24 158,-0 212,-0 212,-24"/>
+<text text-anchor="middle" x="185" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type</text>
+</g>
+<!-- Subroutine -->
+<g id="node4" class="node"><title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="294,-24 230,-24 230,-0 294,-0 294,-24"/>
+<text text-anchor="middle" x="262" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node5" class="node"><title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="366,-24 312,-24 312,-0 366,-0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node6" class="node"><title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="439.5,-24 384.5,-24 384.5,-0 439.5,-0 439.5,-24"/>
+<text text-anchor="middle" x="412" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node7" class="node"><title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="594,-24 458,-24 458,-0 594,-0 594,-24"/>
+<text text-anchor="middle" x="526" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node8" class="node"><title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="666,-24 612,-24 612,-0 666,-0 666,-24"/>
+<text text-anchor="middle" x="639" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node9" class="node"><title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="781.5,-24 684.5,-24 684.5,-0 781.5,-0 781.5,-24"/>
+<text text-anchor="middle" x="733" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<h5>Module Graph</h5>
+<p>Solid arrows point from a parent (sub)module to the submodule which is
+descended from it. Dashed arrows point from a module being used to the
+module using it.</p>
+<h5>Type Graph</h5>
+<p>Solid arrows point from one derived type to another which extends
+(inherits from) it. Dashed arrows point from a derived type to another
+type containing it as a components, with a label listing the name(s) of
+said component(s).</p>
+<h5>Call Graph</h5>
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+     
+    <br>
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-sigma_full%7E2"></span>real(kind=Float64),</td>
+  
+  <td>public,</td>
+  <td>dimension(12,12)</td><td>::</td>
+  <td><strong>sigma_full</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n%7E36"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>n</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m%7E12"></span>integer,</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>m</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    </div>
+  </div>
+
+    <hr>
+    <footer>
+        <div class="row">
+        <div class="col-md-4">&copy; 2016 </div>
+	<div class="col-md-4"><span class="text-center"> Fortran Program was developed by Luke Stagner</span></div>
+        <div class="col-md-4"><span class="pull-right">Documentation generated by <a href="https://github.com/cmacmackin/ford">FORD</a></span></div>
+        </div>
+        <br>
+    </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+        'HTML-CSS': { 
+           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
+        }
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </body>
+</html>
