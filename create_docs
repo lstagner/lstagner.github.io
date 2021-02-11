@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import subprocess
+
+def warn(string):
+    print('\033[93m' + 'WARNING: ' + string + '\033[0m')
+
+def info(string):
+    print('\033[94m' + 'INFO: ' + string + '\033[0m')
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("source_path", help = "Path to source file(s)")
+parser.add_argument("output_path", help = "Output path for markdown files")
+parser.add_argument("--verbose","-v", action = 'store_true')
+parser.add_argument("--git-history", action = 'store_true')
+parser.add_argument("--enforce-doc-format", action = 'store_true')
+
+args = parser.parse_args()
+
+src_path = os.path.abspath(args.source_path)
+out_path = os.path.abspath(args.output_path)
+
+for root, dirs, files in os.walk(src_path):
+    # Skip over hidden files and directories
+    files = [f for f in files if not f[0] == '.']
+    dirs[:] = [d for d in dirs if not d[0] == '.']
+
+    # Create directories in out_path
+    out_root = root.replace(src_path,out_path,1)
+    for d in dirs:
+        os.makedirs(os.path.join(out_root,d),exist_ok=True)
+
+    for f in files:
+        # Check if extension is supported and choose corresponding docmark
+        fname, ext = os.path.splitext(f)
+        ext = ext.lower()
+        if ext not in [".m",".c",".py",".f",".f90"]:
+            continue
+
+        if ext == ".m":
+            commark = "%"
+        elif ext == ".c":
+            commark = "//"
+        elif ext == ".py":
+            commark = "#"
+        elif ext == ".f":
+            commark = "C"
+        elif ext == ".f90":
+            commark = "!"
+
+        # Read file and extract docs
+        filepath = os.path.join(root,f)
+
+        rawdocs = []
+        mddocs = []
+        with open(filepath,"r",encoding="utf8", errors='ignore') as fp:
+            in_docs = False
+            for lns in fp:
+                ln = lns.strip()
+                if ln.startswith(commark):
+                    rawdocs.append(ln.replace(commark,""))
+                    in_docs = True
+                elif in_docs:
+                    if ln.startswith(commark+"+"):
+                        mddocs.append(ln.replace(commark+"+",""))
+                    break
+
+        commark = commark + "+"
+        with open(filepath,"r",encoding="utf8", errors='ignore') as fp:
+            in_docs = False
+            for lns in fp:
+                ln = lns.strip()
+                if ln.startswith(commark):
+                    mddocs.append(ln.replace(commark,""))
+                    in_docs = True
+                elif in_docs:
+                    break
+
+        # Skip file if there are no docs
+        if rawdocs == [] and mddocs == []:
+            if args.verbose:
+                warn("No documentation found in "+filepath.replace(src_path,args.source_path))
+            continue
+
+        docstring = "# "+f+"\n## Basic Information\n"
+        if rawdocs != []:
+            docstring = docstring + "```raw\n"+"\n".join(rawdocs)+"\n```\n\n"
+
+        # Check if rawdocs have proper documentation
+        if args.enforce_doc_format:
+            if ((docstring.find("SYNTAX") < 0 and docstring.find("USAGE") < 0) or
+                 docstring.find("PURPOSE") < 0 or
+                 docstring.find("INPUT") < 0   or
+                 docstring.find("OUTPUT") < 0):
+
+                if args.verbose:
+                    warn("Improper documentation format in "+filepath.replace(src_path,args.source_path))
+                continue
+
+        if mddocs != []:
+            if rawdocs != []:
+                docstring = docstring + "---\n\n"
+            docstring = docstring + "\n".join(mddocs)+"\n"
+
+        # Write docstring to file
+        outfile = os.path.join(out_root,fname+"_"+ext[1:]+".md")
+
+        with open(outfile,"w") as fp:
+            fp.write(docstring)
+
+            if args.git_history:
+                gitlog = subprocess.check_output(["git", "log", filepath]).decode("utf-8")
+                gitlog = "### Git History\n```md\n"+gitlog+"\n```"
+                fp.write(gitlog)
+
