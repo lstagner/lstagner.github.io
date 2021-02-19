@@ -14,14 +14,26 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("source_path", help = "Path to source file(s)")
 parser.add_argument("output_path", help = "Output path for markdown files")
-parser.add_argument("--verbose","-v", action = 'store_true')
-parser.add_argument("--git-history", action = 'store_true')
+parser.add_argument("-v", "--verbose", action = 'store_true')
+parser.add_argument("--git-history", action = 'store_true', help = "Include git commit history in generated markdown")
 parser.add_argument("--enforce-doc-format", action = 'store_true')
+parser.add_argument("-d","--dependencies",action = 'store_true', help="Include matlab dependencies in generated markdown")
 
 args = parser.parse_args()
 
 src_path = os.path.abspath(args.source_path)
 out_path = os.path.abspath(args.output_path)
+
+# Try to start python-matlab FFI
+has_matlab = args.dependencies
+if has_matlab:
+    try:
+        import matlab.engine as mle
+        eng = mle.start_matlab()
+        eng.addpath(eng.genpath(src_path))
+    except:
+        warn("Matlab unavailable. Skipping Matlab dependencies")
+        has_matlab = False
 
 for root, dirs, files in os.walk(src_path):
     # Skip over hidden files and directories
@@ -105,6 +117,28 @@ for root, dirs, files in os.walk(src_path):
                 docstring = docstring + "---\n\n"
             docstring = docstring + "\n".join(mddocs)+"\n"
 
+        # Extract function calls for matlab files
+        if has_matlab and ext == ".m":
+            try:
+                callinfo = eng.getcallinfo(filepath)
+                flist = list(set(callinfo["calls"]["fcnCalls"]["names"]))
+                flist = [eng.which(f) for f in flist]
+            except:
+                flist = []
+
+            if len(flist) > 0:
+                docstring = docstring + "## Dependencies\n"
+                for depfile in flist:
+                    if not depfile.startswith(src_path):
+                        continue
+                    depbasename = os.path.basename(depfile)
+                    depname, depext = os.path.splitext(depbasename)
+                    deppath = os.path.relpath(os.path.dirname(depfile),start=os.path.dirname(filepath))
+                    deppath = os.path.join(deppath,depname+"_"+depext[1:]+".md")
+                    deplink = "* [{}]({})\n".format(depname,deppath)
+                    docstring = docstring + deplink
+
+
         # Write docstring to file
         outfile = os.path.join(out_root,fname+"_"+ext[1:]+".md")
 
@@ -116,3 +150,5 @@ for root, dirs, files in os.walk(src_path):
                 gitlog = "### Git History\n```md\n"+gitlog+"\n```"
                 fp.write(gitlog)
 
+if has_matlab:
+    eng.quit()
